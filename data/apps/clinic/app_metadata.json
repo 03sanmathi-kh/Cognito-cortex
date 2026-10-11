@@ -1,0 +1,1388 @@
+{
+  "app": {
+    "id": "clinic",
+    "name": "Clinic Appointments",
+    "description": "Clinic appointments, patient flow, and schedule management",
+    "currency": "USD"
+  },
+  "as_of": "2026-09-30",
+  "roles": [
+    {
+      "id": "admin",
+      "display_name": "Clinic Administrator"
+    },
+    {
+      "id": "doctor",
+      "display_name": "Physician"
+    },
+    {
+      "id": "receptionist",
+      "display_name": "Front Desk"
+    }
+  ],
+  "dimensions": {
+    "date_range": {
+      "start": "2025-10-01",
+      "end": "2026-09-30"
+    },
+    "departments": [
+      "Cardiology",
+      "Dermatology",
+      "Pediatrics",
+      "Orthopedics",
+      "General Medicine"
+    ],
+    "doctors": [
+      "Dr. Sharma",
+      "Dr. Rao",
+      "Dr. Patel",
+      "Dr. Mehta",
+      "Dr. Nair"
+    ],
+    "statuses": [
+      "Completed",
+      "Cancelled",
+      "No-Show"
+    ],
+    "visit_types": [
+      "New",
+      "Follow-up",
+      "Emergency"
+    ],
+    "age_groups": [
+      "Child",
+      "Adult",
+      "Senior"
+    ]
+  },
+  "directories": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "subdirectories": [
+        {
+          "id": "general",
+          "title": "General"
+        }
+      ]
+    },
+    {
+      "id": "departments",
+      "title": "Departments",
+      "subdirectories": [
+        {
+          "id": "clinical",
+          "title": "Clinical"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operations",
+      "subdirectories": [
+        {
+          "id": "performance",
+          "title": "Performance"
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": "clinic_overview",
+      "title": "Clinic Overview",
+      "route": "/clinic/overview",
+      "directory": "overview",
+      "subdirectory": "general",
+      "description": "Executive summary of clinic appointments, completion rates, and operational throughput.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "type": "single_select",
+          "allowed_values": [
+            "Completed",
+            "Cancelled",
+            "No-Show"
+          ],
+          "default": null
+        },
+        {
+          "name": "visit_type",
+          "label": "Visit Type",
+          "type": "single_select",
+          "allowed_values": [
+            "New",
+            "Follow-up",
+            "Emergency"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        },
+        {
+          "field": "fee",
+          "direction": "desc",
+          "label": "Fee (Highest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "kpi_total_appointments",
+          "title": "Total Appointments",
+          "type": "kpi",
+          "measures": [
+            "appointments"
+          ]
+        },
+        {
+          "id": "bar_dept_distribution",
+          "title": "Appointments by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_appointments_ledger",
+          "title": "Recent Appointments Ledger",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "visit_type",
+            "status",
+            "fee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "appointments_trend",
+      "title": "Appointments Trend",
+      "route": "/clinic/appointments-trend",
+      "directory": "overview",
+      "subdirectory": "general",
+      "description": "Longitudinal volume trends of clinic appointments over daily and monthly intervals.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_year",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "visit_type",
+          "label": "Visit Type",
+          "type": "single_select",
+          "allowed_values": [
+            "New",
+            "Follow-up",
+            "Emergency"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "asc",
+          "label": "Date (Chronological)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "line_daily_appointments",
+          "title": "Appointment Volume Over Time",
+          "type": "line_chart",
+          "columns": [
+            "appointment_date",
+            "fee"
+          ]
+        },
+        {
+          "id": "bar_monthly_trend",
+          "title": "Monthly Appointment Trend",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_trend_details",
+          "title": "Appointment Timeline Records",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "status_breakdown",
+      "title": "Status Breakdown",
+      "route": "/clinic/status-breakdown",
+      "directory": "overview",
+      "subdirectory": "general",
+      "description": "Comprehensive breakdown of completed, cancelled, and no-show consultations.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "status",
+          "label": "Status",
+          "type": "single_select",
+          "allowed_values": [
+            "Completed",
+            "Cancelled",
+            "No-Show"
+          ],
+          "default": null
+        },
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "pie_status_split",
+          "title": "Appointment Status Distribution",
+          "type": "pie_chart",
+          "columns": [
+            "status",
+            "fee"
+          ]
+        },
+        {
+          "id": "bar_status_by_dept",
+          "title": "Status by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_status_log",
+          "title": "Status Resolution Log",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "doctor",
+            "status",
+            "visit_type"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "no_show_analysis",
+      "title": "No-show Analysis",
+      "route": "/clinic/no-show-analysis",
+      "directory": "overview",
+      "subdirectory": "general",
+      "description": "Patient absenteeism metrics, no-show rate indicators, and impact on clinic capacity.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "doctor",
+          "label": "Doctor",
+          "type": "single_select",
+          "allowed_values": [
+            "Dr. Sharma",
+            "Dr. Rao",
+            "Dr. Patel",
+            "Dr. Mehta",
+            "Dr. Nair"
+          ],
+          "default": null
+        },
+        {
+          "name": "visit_type",
+          "label": "Visit Type",
+          "type": "single_select",
+          "allowed_values": [
+            "New",
+            "Follow-up",
+            "Emergency"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "kpi_no_show_rate",
+          "title": "No-show Rate",
+          "type": "kpi",
+          "measures": [
+            "no_show_rate"
+          ]
+        },
+        {
+          "id": "bar_noshow_by_dept",
+          "title": "No-shows by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_noshow_records",
+          "title": "No-show Incidents",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "visit_type",
+            "age_group"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cancellations_page",
+      "title": "Cancellations",
+      "route": "/clinic/cancellations",
+      "directory": "overview",
+      "subdirectory": "general",
+      "description": "Patient cancellation tracking, notice lead time, and departmental cancellation rates.",
+      "allowed_roles": [
+        "admin",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "visit_type",
+          "label": "Visit Type",
+          "type": "single_select",
+          "allowed_values": [
+            "New",
+            "Follow-up",
+            "Emergency"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "kpi_cancellation_rate",
+          "title": "Cancellation Rate",
+          "type": "kpi",
+          "measures": [
+            "cancellation_rate"
+          ]
+        },
+        {
+          "id": "bar_cancellations_by_dept",
+          "title": "Cancellations by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_cancelled_appointments",
+          "title": "Cancelled Appointments Ledger",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "visit_type",
+            "fee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "appointments_by_department",
+      "title": "Appointments by Department",
+      "route": "/clinic/by-department",
+      "directory": "departments",
+      "subdirectory": "clinical",
+      "description": "Comparative consultation count, scheduling density, and intake volume by department.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "bar_dept_appointments_count",
+          "title": "Volume by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "pie_dept_share_all",
+          "title": "Department Intake Share",
+          "type": "pie_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_dept_appointments_list",
+          "title": "Department Appointments",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "appointments_by_doctor",
+      "title": "Appointments by Doctor",
+      "route": "/clinic/by-doctor",
+      "directory": "departments",
+      "subdirectory": "clinical",
+      "description": "Physician consultation volume, patient load, and appointment assignments.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "doctor",
+          "label": "Doctor",
+          "type": "single_select",
+          "allowed_values": [
+            "Dr. Sharma",
+            "Dr. Rao",
+            "Dr. Patel",
+            "Dr. Mehta",
+            "Dr. Nair"
+          ],
+          "default": null
+        },
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "bar_doctor_patient_count",
+          "title": "Appointments per Physician",
+          "type": "bar_chart",
+          "columns": [
+            "doctor",
+            "fee"
+          ]
+        },
+        {
+          "id": "pie_doctor_share",
+          "title": "Physician Volume Share",
+          "type": "pie_chart",
+          "columns": [
+            "doctor",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_doctor_appointments",
+          "title": "Physician Appointments Roster",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "doctor",
+            "department",
+            "visit_type",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doctor_workload",
+      "title": "Doctor Workload",
+      "route": "/clinic/doctor-workload",
+      "directory": "departments",
+      "subdirectory": "clinical",
+      "description": "Physician clinical burden, completed consult hours, and caseload balance.",
+      "allowed_roles": [
+        "admin",
+        "doctor"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "doctor",
+          "label": "Doctor",
+          "type": "single_select",
+          "allowed_values": [
+            "Dr. Sharma",
+            "Dr. Rao",
+            "Dr. Patel",
+            "Dr. Mehta",
+            "Dr. Nair"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "wait_minutes",
+          "direction": "desc",
+          "label": "Wait Minutes (Highest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "bar_doctor_workload_consults",
+          "title": "Consultations by Doctor",
+          "type": "bar_chart",
+          "columns": [
+            "doctor",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_doctor_workload_table",
+          "title": "Physician Caseload Details",
+          "type": "grid",
+          "columns": [
+            "doctor",
+            "appointment_date",
+            "visit_type",
+            "status",
+            "wait_minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "department_comparison",
+      "title": "Department Comparison",
+      "route": "/clinic/department-comparison",
+      "directory": "departments",
+      "subdirectory": "clinical",
+      "description": "Multi-department operational comparison across volume, cancellations, and waiting duration.",
+      "allowed_roles": [
+        "admin",
+        "doctor"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "type": "single_select",
+          "allowed_values": [
+            "Completed",
+            "Cancelled",
+            "No-Show"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "bar_dept_compare_vol",
+          "title": "Department Relative Volume",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "pie_dept_compare_share",
+          "title": "Intake Share Comparison",
+          "type": "pie_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_dept_comparison_summary",
+          "title": "Comparative Department Roster",
+          "type": "grid",
+          "columns": [
+            "department",
+            "doctor",
+            "status",
+            "fee",
+            "wait_minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daily_schedule",
+      "title": "Daily Schedule",
+      "route": "/clinic/daily-schedule",
+      "directory": "departments",
+      "subdirectory": "clinical",
+      "description": "Real-time daily appointment queue, room assignments, and patient check-in status.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "doctor",
+          "label": "Doctor",
+          "type": "single_select",
+          "allowed_values": [
+            "Dr. Sharma",
+            "Dr. Rao",
+            "Dr. Patel",
+            "Dr. Mehta",
+            "Dr. Nair"
+          ],
+          "default": null
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "type": "single_select",
+          "allowed_values": [
+            "Completed",
+            "Cancelled",
+            "No-Show"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "asc",
+          "label": "Date (Earliest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "bar_schedule_by_dept",
+          "title": "Daily Schedule by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_daily_schedule_queue",
+          "title": "Daily Patient Queue",
+          "type": "grid",
+          "columns": [
+            "appointment_id",
+            "appointment_date",
+            "doctor",
+            "department",
+            "status",
+            "wait_minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "visit_types_page",
+      "title": "Visit Types",
+      "route": "/clinic/visit-types",
+      "directory": "operations",
+      "subdirectory": "performance",
+      "description": "Analysis of appointment categories: New patient intake, Follow-up consultations, and Emergency cases.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "visit_type",
+          "label": "Visit Type",
+          "type": "single_select",
+          "allowed_values": [
+            "New",
+            "Follow-up",
+            "Emergency"
+          ],
+          "default": null
+        },
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "pie_visittype_split",
+          "title": "Visit Type Distribution",
+          "type": "pie_chart",
+          "columns": [
+            "visit_type",
+            "fee"
+          ]
+        },
+        {
+          "id": "bar_visittype_by_dept",
+          "title": "Visit Types across Departments",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_visittype_records",
+          "title": "Visit Type Ledger",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "visit_type",
+            "department",
+            "doctor",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "age_groups_page",
+      "title": "Age Groups",
+      "route": "/clinic/age-groups",
+      "directory": "operations",
+      "subdirectory": "performance",
+      "description": "Demographic breakdown across pediatric (Child), adult, and geriatric (Senior) patient populations.",
+      "allowed_roles": [
+        "admin",
+        "doctor"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "age_group",
+          "label": "Age Group",
+          "type": "single_select",
+          "allowed_values": [
+            "Child",
+            "Adult",
+            "Senior"
+          ],
+          "default": null
+        },
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "pie_agegroup_distribution",
+          "title": "Patient Demographics by Age Group",
+          "type": "pie_chart",
+          "columns": [
+            "age_group",
+            "fee"
+          ]
+        },
+        {
+          "id": "bar_agegroup_dept",
+          "title": "Age Group by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_agegroup_records",
+          "title": "Demographic Intake Records",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "age_group",
+            "department",
+            "visit_type",
+            "doctor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wait_times_page",
+      "title": "Wait Times",
+      "route": "/clinic/wait-times",
+      "directory": "operations",
+      "subdirectory": "performance",
+      "description": "Patient waiting room duration metrics, clinic throughput efficiency, and service delays.",
+      "allowed_roles": [
+        "admin",
+        "receptionist",
+        "doctor"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "doctor",
+          "label": "Doctor",
+          "type": "single_select",
+          "allowed_values": [
+            "Dr. Sharma",
+            "Dr. Rao",
+            "Dr. Patel",
+            "Dr. Mehta",
+            "Dr. Nair"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "wait_minutes",
+          "direction": "desc",
+          "label": "Wait Minutes (Longest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "kpi_avg_wait_time",
+          "title": "Average Wait Time (Minutes)",
+          "type": "kpi",
+          "measures": [
+            "avg_wait_minutes"
+          ]
+        },
+        {
+          "id": "bar_waittime_dept",
+          "title": "Wait Times by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_waittime_ledger",
+          "title": "Wait Time Audit Log",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "wait_minutes",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fee_collection_page",
+      "title": "Fee Collection",
+      "route": "/clinic/fee-collection",
+      "directory": "operations",
+      "subdirectory": "performance",
+      "description": "Consultation fee collection tracking, payment status, and financial receipts by clinical department.",
+      "allowed_roles": [
+        "admin"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "visit_type",
+          "label": "Visit Type",
+          "type": "single_select",
+          "allowed_values": [
+            "New",
+            "Follow-up",
+            "Emergency"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "fee",
+          "direction": "desc",
+          "label": "Fee (Highest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "kpi_fee_collected",
+          "title": "Total Fees Collected",
+          "type": "kpi",
+          "measures": [
+            "fee_collected"
+          ]
+        },
+        {
+          "id": "bar_fee_by_dept",
+          "title": "Fee Collections by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_fee_collection_log",
+          "title": "Fee Receipts Ledger",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "fee",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "followup_tracker",
+      "title": "Follow-up Tracker",
+      "route": "/clinic/followup-tracker",
+      "directory": "operations",
+      "subdirectory": "performance",
+      "description": "Care continuity monitor for patient follow-up appointments, retention rates, and re-attendance.",
+      "allowed_roles": [
+        "admin",
+        "doctor",
+        "receptionist"
+      ],
+      "default_date_range": "this_quarter",
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "filters": [
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "single_select",
+          "allowed_values": [
+            "Cardiology",
+            "Dermatology",
+            "Pediatrics",
+            "Orthopedics",
+            "General Medicine"
+          ],
+          "default": null
+        },
+        {
+          "name": "doctor",
+          "label": "Doctor",
+          "type": "single_select",
+          "allowed_values": [
+            "Dr. Sharma",
+            "Dr. Rao",
+            "Dr. Patel",
+            "Dr. Mehta",
+            "Dr. Nair"
+          ],
+          "default": null
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "type": "single_select",
+          "allowed_values": [
+            "Completed",
+            "Cancelled",
+            "No-Show"
+          ],
+          "default": null
+        }
+      ],
+      "sort_options": [
+        {
+          "field": "appointment_date",
+          "direction": "desc",
+          "label": "Date (Newest)"
+        }
+      ],
+      "widgets": [
+        {
+          "id": "bar_followup_departments",
+          "title": "Follow-ups by Department",
+          "type": "bar_chart",
+          "columns": [
+            "department",
+            "fee"
+          ]
+        },
+        {
+          "id": "pie_followup_status",
+          "title": "Follow-up Status Resolution",
+          "type": "pie_chart",
+          "columns": [
+            "status",
+            "fee"
+          ]
+        },
+        {
+          "id": "grid_followup_patients",
+          "title": "Follow-up Patient Queue",
+          "type": "grid",
+          "columns": [
+            "appointment_date",
+            "department",
+            "doctor",
+            "status",
+            "age_group"
+          ]
+        }
+      ]
+    }
+  ]
+}

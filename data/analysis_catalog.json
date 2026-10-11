@@ -1,0 +1,103 @@
+{
+  "metrics": [
+    {
+      "id": "revenue",
+      "label": "Revenue",
+      "description": "Total net sales revenue generated from customer orders.",
+      "base_table": "base_sales",
+      "date_column": "order_date",
+      "sql_expression": "SUM(revenue)",
+      "format": "currency",
+      "home_page": "revenue_by_region",
+      "page_ids": [
+        "revenue_by_region",
+        "revenue_growth_deep_dive",
+        "executive_pulse"
+      ]
+    },
+    {
+      "id": "orders",
+      "label": "Orders",
+      "description": "Total number of distinct completed customer orders placed.",
+      "base_table": "base_sales",
+      "date_column": "order_date",
+      "sql_expression": "COUNT(DISTINCT order_id)",
+      "format": "count",
+      "home_page": "order_volume_trends",
+      "page_ids": [
+        "order_volume_trends",
+        "fulfillment_status_hub",
+        "executive_pulse"
+      ]
+    },
+    {
+      "id": "units",
+      "label": "Units",
+      "description": "Total quantity of physical product units sold.",
+      "base_table": "base_sales",
+      "date_column": "order_date",
+      "sql_expression": "SUM(quantity)",
+      "format": "count",
+      "home_page": "top_products_by_region",
+      "page_ids": [
+        "top_products_by_region",
+        "product_inventory_health"
+      ]
+    },
+    {
+      "id": "average_order_value",
+      "label": "Average Order Value",
+      "description": "Average revenue generated per order (Revenue divided by Orders).",
+      "base_table": "base_sales",
+      "date_column": "order_date",
+      "sql_expression": "SUM(revenue) / NULLIF(COUNT(DISTINCT order_id), 0)",
+      "format": "currency",
+      "ratio_of": [
+        "revenue",
+        "orders"
+      ],
+      "home_page": "revenue_by_region",
+      "page_ids": [
+        "revenue_by_region",
+        "order_volume_trends"
+      ]
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "region",
+      "label": "Region",
+      "column": "region",
+      "table": "base_sales",
+      "description": "Geographic sales distribution region (North, South, East, West)."
+    },
+    {
+      "id": "channel",
+      "label": "Channel",
+      "column": "channel",
+      "table": "base_sales",
+      "description": "Sales channel (Online, Retail, Partner)."
+    },
+    {
+      "id": "category",
+      "label": "Product Category",
+      "column": "category",
+      "table": "base_sales",
+      "description": "Merchandise product category (Beverages, Household, Packaged Foods, Personal Care)."
+    },
+    {
+      "id": "product",
+      "label": "Product",
+      "column": "product_name",
+      "table": "base_sales",
+      "description": "Display name of the individual product."
+    },
+    {
+      "id": "customer_segment",
+      "label": "Customer Segment",
+      "column": "segment",
+      "table": "base_sales",
+      "description": "Customer tier or segment (Enterprise, SMB, Retail)."
+    }
+  ]
+}

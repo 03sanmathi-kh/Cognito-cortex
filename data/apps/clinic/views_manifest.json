@@ -1,0 +1,776 @@
+[
+  {
+    "page_id": "clinic_overview",
+    "widget_id": "kpi_total_appointments",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "clinic_overview",
+    "widget_id": "bar_dept_distribution",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "clinic_overview",
+    "widget_id": "grid_appointments_ledger",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_trend",
+    "widget_id": "line_daily_appointments",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_trend",
+    "widget_id": "bar_monthly_trend",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_trend",
+    "widget_id": "grid_trend_details",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "status_breakdown",
+    "widget_id": "pie_status_split",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "status_breakdown",
+    "widget_id": "bar_status_by_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "status_breakdown",
+    "widget_id": "grid_status_log",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "no_show_analysis",
+    "widget_id": "kpi_no_show_rate",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "no_show_analysis",
+    "widget_id": "bar_noshow_by_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "no_show_analysis",
+    "widget_id": "grid_noshow_records",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "cancellations_page",
+    "widget_id": "kpi_cancellation_rate",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "cancellations_page",
+    "widget_id": "bar_cancellations_by_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "cancellations_page",
+    "widget_id": "grid_cancelled_appointments",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_by_department",
+    "widget_id": "bar_dept_appointments_count",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_by_department",
+    "widget_id": "pie_dept_share_all",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_by_department",
+    "widget_id": "grid_dept_appointments_list",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_by_doctor",
+    "widget_id": "bar_doctor_patient_count",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_by_doctor",
+    "widget_id": "pie_doctor_share",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "appointments_by_doctor",
+    "widget_id": "grid_doctor_appointments",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "doctor_workload",
+    "widget_id": "bar_doctor_workload_consults",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "doctor_workload",
+    "widget_id": "grid_doctor_workload_table",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "department_comparison",
+    "widget_id": "bar_dept_compare_vol",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "department_comparison",
+    "widget_id": "pie_dept_compare_share",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "department_comparison",
+    "widget_id": "grid_dept_comparison_summary",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "daily_schedule",
+    "widget_id": "bar_schedule_by_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "daily_schedule",
+    "widget_id": "grid_daily_schedule_queue",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "visit_types_page",
+    "widget_id": "pie_visittype_split",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "visit_types_page",
+    "widget_id": "bar_visittype_by_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "visit_types_page",
+    "widget_id": "grid_visittype_records",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "age_groups_page",
+    "widget_id": "pie_agegroup_distribution",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "age_groups_page",
+    "widget_id": "bar_agegroup_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "age_groups_page",
+    "widget_id": "grid_agegroup_records",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "wait_times_page",
+    "widget_id": "kpi_avg_wait_time",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "wait_times_page",
+    "widget_id": "bar_waittime_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "wait_times_page",
+    "widget_id": "grid_waittime_ledger",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "fee_collection_page",
+    "widget_id": "kpi_fee_collected",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "fee_collection_page",
+    "widget_id": "bar_fee_by_dept",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "fee_collection_page",
+    "widget_id": "grid_fee_collection_log",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "followup_tracker",
+    "widget_id": "bar_followup_departments",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "followup_tracker",
+    "widget_id": "pie_followup_status",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  },
+  {
+    "page_id": "followup_tracker",
+    "widget_id": "grid_followup_patients",
+    "data_view": "v_appointments",
+    "date_column": "appointment_date",
+    "columns": [
+      "appointment_id",
+      "appointment_date",
+      "department",
+      "doctor",
+      "status",
+      "visit_type",
+      "patient_type",
+      "age_group",
+      "fee",
+      "wait_minutes"
+    ]
+  }
+]

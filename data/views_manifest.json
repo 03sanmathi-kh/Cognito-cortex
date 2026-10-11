@@ -1,0 +1,2435 @@
+[
+  {
+    "page_id": "revenue_by_region",
+    "widget_id": "kpi_total_revenue",
+    "data_view": "v_revenue_by_region_kpi_total_revenue",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_region",
+    "widget_id": "chart_regional_split",
+    "data_view": "v_revenue_by_region_chart_regional_split",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_region",
+    "widget_id": "grid_region_summary",
+    "data_view": "v_revenue_by_region_grid_region_summary",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "order_count",
+      "gross_revenue",
+      "avg_order_value",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_region_and_product",
+    "widget_id": "kpi_top_sku_region",
+    "data_view": "v_revenue_by_region_and_product_kpi_top_sku_region",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_region_and_product",
+    "widget_id": "chart_stacked_product_region",
+    "data_view": "v_revenue_by_region_and_product_chart_stacked_product_region",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_region_and_product",
+    "widget_id": "grid_matrix_sales",
+    "data_view": "v_revenue_by_region_and_product_grid_matrix_sales",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "category",
+      "product_name",
+      "units_sold",
+      "revenue",
+      "customer_id",
+      "quantity",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "regional_sales_targets",
+    "widget_id": "kpi_target_attainment",
+    "data_view": "v_regional_sales_targets_kpi_target_attainment",
+    "base": "base_targets",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "revenue_target"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "regional_sales_targets",
+    "widget_id": "chart_target_variance",
+    "data_view": "v_regional_sales_targets_chart_target_variance",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "regional_sales_targets",
+    "widget_id": "grid_targets_attainment",
+    "data_view": "v_regional_sales_targets_grid_targets_attainment",
+    "base": "base_targets",
+    "columns": [
+      "month",
+      "region",
+      "target_amount",
+      "actual_amount",
+      "attainment_pct",
+      "status",
+      "category",
+      "revenue_target"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "regional_sales_trend",
+    "widget_id": "chart_regional_timeline",
+    "data_view": "v_regional_sales_trend_chart_regional_timeline",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "date",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "regional_sales_trend",
+    "widget_id": "kpi_trend_velocity",
+    "data_view": "v_regional_sales_trend_kpi_trend_velocity",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "regional_sales_trend",
+    "widget_id": "grid_trend_metrics",
+    "data_view": "v_regional_sales_trend_grid_trend_metrics",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "period",
+      "north_revenue",
+      "south_revenue",
+      "east_revenue",
+      "west_revenue",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "top_products_by_region",
+    "widget_id": "kpi_top_selling_item",
+    "data_view": "v_top_products_by_region_kpi_top_selling_item",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "top_products_by_region",
+    "widget_id": "chart_product_leaderboard",
+    "data_view": "v_top_products_by_region_chart_product_leaderboard",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "top_products_by_region",
+    "widget_id": "grid_product_rankings",
+    "data_view": "v_top_products_by_region_grid_product_rankings",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "category",
+      "rank",
+      "product_name",
+      "revenue",
+      "units_sold",
+      "customer_id",
+      "quantity",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "channel_mix_by_region",
+    "widget_id": "chart_channel_donut",
+    "data_view": "v_channel_mix_by_region_chart_channel_donut",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "channel_mix_by_region",
+    "widget_id": "kpi_direct_channel_ratio",
+    "data_view": "v_channel_mix_by_region_kpi_direct_channel_ratio",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "channel_mix_by_region",
+    "widget_id": "grid_channel_table",
+    "data_view": "v_channel_mix_by_region_grid_channel_table",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "order_count",
+      "revenue",
+      "average_margin",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "product_catalog_sales",
+    "widget_id": "kpi_total_skus_active",
+    "data_view": "v_product_catalog_sales_kpi_total_skus_active",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "product_catalog_sales",
+    "widget_id": "chart_category_comparison",
+    "data_view": "v_product_catalog_sales_chart_category_comparison",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "product_catalog_sales",
+    "widget_id": "grid_catalog_details",
+    "data_view": "v_product_catalog_sales_grid_catalog_details",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "category",
+      "product_name",
+      "unit_price",
+      "units_sold",
+      "gross_revenue",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "sales_quota_attainment",
+    "widget_id": "kpi_quota_pacing",
+    "data_view": "v_sales_quota_attainment_kpi_quota_pacing",
+    "base": "base_targets",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "revenue_target"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "sales_quota_attainment",
+    "widget_id": "grid_quota_leaderboard",
+    "data_view": "v_sales_quota_attainment_grid_quota_leaderboard",
+    "base": "base_targets",
+    "columns": [
+      "month",
+      "region",
+      "quota_target",
+      "actual_closed",
+      "variance_pct",
+      "tier",
+      "category",
+      "revenue_target"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "discount_and_pricing_performance",
+    "widget_id": "kpi_avg_discount_rate",
+    "data_view": "v_discount_and_pricing_performance_kpi_avg_discount_rate",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "channel",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "channel",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "discount_and_pricing_performance",
+    "widget_id": "chart_discount_by_channel",
+    "data_view": "v_discount_and_pricing_performance_chart_discount_by_channel",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "channel",
+      "category",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "channel",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "discount_and_pricing_performance",
+    "widget_id": "grid_discount_breakdown",
+    "data_view": "v_discount_and_pricing_performance_grid_discount_breakdown",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "channel",
+      "category",
+      "product_name",
+      "list_price",
+      "avg_sold_price",
+      "discount_pct",
+      "net_margin",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "channel",
+      "category"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "quarterly_revenue_summary",
+    "widget_id": "kpi_qtr_revenue",
+    "data_view": "v_quarterly_revenue_summary_kpi_qtr_revenue",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "quarterly_revenue_summary",
+    "widget_id": "chart_quarterly_run_rate",
+    "data_view": "v_quarterly_revenue_summary_chart_quarterly_run_rate",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "week",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "quarterly_revenue_summary",
+    "widget_id": "grid_qtr_breakdown",
+    "data_view": "v_quarterly_revenue_summary_grid_qtr_breakdown",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "fiscal_quarter",
+      "gross_revenue",
+      "returns_allowances",
+      "net_revenue",
+      "growth_rate",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_channel",
+    "widget_id": "chart_channel_breakdown",
+    "data_view": "v_revenue_by_channel_chart_channel_breakdown",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_channel",
+    "widget_id": "kpi_top_channel",
+    "data_view": "v_revenue_by_channel_kpi_top_channel",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "revenue_by_channel",
+    "widget_id": "grid_channel_revenue",
+    "data_view": "v_revenue_by_channel_grid_channel_revenue",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "channel",
+      "gross_sales",
+      "discounts",
+      "net_sales",
+      "margin_pct",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "operating_expenses_breakdown",
+    "widget_id": "kpi_total_opex",
+    "data_view": "v_operating_expenses_breakdown_kpi_total_opex",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "operating_expenses_breakdown",
+    "widget_id": "chart_opex_categories",
+    "data_view": "v_operating_expenses_breakdown_chart_opex_categories",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_category",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "operating_expenses_breakdown",
+    "widget_id": "grid_expense_ledger",
+    "data_view": "v_operating_expenses_breakdown_grid_expense_ledger",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_category",
+      "budgeted",
+      "actual_spent",
+      "variance",
+      "status",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "logistics_and_freight_costs",
+    "widget_id": "kpi_avg_freight_rate",
+    "data_view": "v_logistics_and_freight_costs_kpi_avg_freight_rate",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "logistics_and_freight_costs",
+    "widget_id": "chart_freight_by_region",
+    "data_view": "v_logistics_and_freight_costs_chart_freight_by_region",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "logistics_and_freight_costs",
+    "widget_id": "grid_carrier_rates",
+    "data_view": "v_logistics_and_freight_costs_grid_carrier_rates",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "carrier",
+      "shipment_count",
+      "total_freight_cost",
+      "avg_cost_per_mile",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "gross_margin_by_category",
+    "widget_id": "kpi_blended_margin",
+    "data_view": "v_gross_margin_by_category_kpi_blended_margin",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "category",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "gross_margin_by_category",
+    "widget_id": "chart_category_margins",
+    "data_view": "v_gross_margin_by_category_chart_category_margins",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "category",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "gross_margin_by_category",
+    "widget_id": "grid_margin_audit",
+    "data_view": "v_gross_margin_by_category_grid_margin_audit",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "category",
+      "total_revenue",
+      "cogs",
+      "gross_profit",
+      "margin_pct",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "regional_profitability_margins",
+    "widget_id": "kpi_top_profit_region",
+    "data_view": "v_regional_profitability_margins_kpi_top_profit_region",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "regional_profitability_margins",
+    "widget_id": "chart_regional_margin_trend",
+    "data_view": "v_regional_profitability_margins_chart_regional_margin_trend",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "regional_profitability_margins",
+    "widget_id": "grid_regional_margin_stats",
+    "data_view": "v_regional_profitability_margins_grid_regional_margin_stats",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "revenue",
+      "costs",
+      "net_profit",
+      "net_margin_pct",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "order_volume_and_velocity",
+    "widget_id": "kpi_daily_order_volume",
+    "data_view": "v_order_volume_and_velocity_kpi_daily_order_volume",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "order_volume_and_velocity",
+    "widget_id": "chart_velocity_timeline",
+    "data_view": "v_order_volume_and_velocity_chart_velocity_timeline",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "date",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "order_volume_and_velocity",
+    "widget_id": "grid_volume_by_region",
+    "data_view": "v_order_volume_and_velocity_grid_volume_by_region",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "total_orders",
+      "avg_processing_hours",
+      "sla_met_pct",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "order_status_and_backlog",
+    "widget_id": "kpi_active_backlog",
+    "data_view": "v_order_status_and_backlog_kpi_active_backlog",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "order_status_and_backlog",
+    "widget_id": "chart_status_pipeline",
+    "data_view": "v_order_status_and_backlog_chart_status_pipeline",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "status",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "order_status_and_backlog",
+    "widget_id": "grid_backlog_orders",
+    "data_view": "v_order_status_and_backlog_grid_backlog_orders",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "order_id",
+      "channel",
+      "order_date",
+      "days_pending",
+      "priority",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "regional_fulfillment_lead_time",
+    "widget_id": "kpi_avg_lead_time",
+    "data_view": "v_regional_fulfillment_lead_time_kpi_avg_lead_time",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "regional_fulfillment_lead_time",
+    "widget_id": "chart_lead_time_by_region",
+    "data_view": "v_regional_fulfillment_lead_time_chart_lead_time_by_region",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "regional_fulfillment_lead_time",
+    "widget_id": "grid_lead_time_stats",
+    "data_view": "v_regional_fulfillment_lead_time_grid_lead_time_stats",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "warehouse_code",
+      "avg_pick_hours",
+      "avg_pack_hours",
+      "transit_days",
+      "total_lead_days",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "warehouse_shipment_dispatch",
+    "widget_id": "kpi_daily_dispatches",
+    "data_view": "v_warehouse_shipment_dispatch_kpi_daily_dispatches",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "warehouse_shipment_dispatch",
+    "widget_id": "chart_hourly_dispatch",
+    "data_view": "v_warehouse_shipment_dispatch_chart_hourly_dispatch",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "dispatch_hour",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "warehouse_shipment_dispatch",
+    "widget_id": "grid_dock_activity",
+    "data_view": "v_warehouse_shipment_dispatch_grid_dock_activity",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "dispatch_id",
+      "destination",
+      "carrier",
+      "pallet_count",
+      "departure_status",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "on_time_in_full_delivery",
+    "widget_id": "kpi_otif_rate",
+    "data_view": "v_on_time_in_full_delivery_kpi_otif_rate",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "on_time_in_full_delivery",
+    "widget_id": "chart_otif_trend",
+    "data_view": "v_on_time_in_full_delivery_chart_otif_trend",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "week",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "on_time_in_full_delivery",
+    "widget_id": "grid_otif_summary",
+    "data_view": "v_on_time_in_full_delivery_grid_otif_summary",
+    "base": "base_sales",
+    "columns": [
+      "order_date",
+      "region",
+      "channel",
+      "shipped_orders",
+      "on_time_pct",
+      "in_full_pct",
+      "otif_pct",
+      "product_name",
+      "customer_id",
+      "quantity",
+      "revenue",
+      "cost",
+      "status"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "order_date"
+  },
+  {
+    "page_id": "customer_segments_overview",
+    "widget_id": "kpi_total_customers",
+    "data_view": "v_customer_segments_overview_kpi_total_customers",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_segments_overview",
+    "widget_id": "chart_segment_mix",
+    "data_view": "v_customer_segments_overview_chart_segment_mix",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "segment",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_segments_overview",
+    "widget_id": "grid_segment_table",
+    "data_view": "v_customer_segments_overview_grid_segment_table",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "segment",
+      "customer_count",
+      "avg_order_value",
+      "retention_pct",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_revenue_by_segment",
+    "widget_id": "kpi_segment_revenue",
+    "data_view": "v_customer_revenue_by_segment_kpi_segment_revenue",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "category",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_revenue_by_segment",
+    "widget_id": "chart_segment_revenue",
+    "data_view": "v_customer_revenue_by_segment_chart_segment_revenue",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "category",
+      "segment",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_revenue_by_segment",
+    "widget_id": "grid_segment_summary",
+    "data_view": "v_customer_revenue_by_segment_grid_segment_summary",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "category",
+      "segment",
+      "customer_count",
+      "gross_revenue",
+      "avg_order_value",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_retention_trend",
+    "widget_id": "chart_retention_timeline",
+    "data_view": "v_customer_retention_trend_chart_retention_timeline",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "date",
+      "segment",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_retention_trend",
+    "widget_id": "kpi_retention_rate",
+    "data_view": "v_customer_retention_trend_kpi_retention_rate",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_retention_trend",
+    "widget_id": "grid_retention_table",
+    "data_view": "v_customer_retention_trend_grid_retention_table",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "segment",
+      "retention_pct",
+      "churn_rate",
+      "repeat_rate",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "repeat_purchase_rate",
+    "widget_id": "kpi_repeat_rate",
+    "data_view": "v_repeat_purchase_rate_kpi_repeat_rate",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "repeat_purchase_rate",
+    "widget_id": "chart_repeat_by_segment",
+    "data_view": "v_repeat_purchase_rate_chart_repeat_by_segment",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "segment",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "repeat_purchase_rate",
+    "widget_id": "grid_purchase_frequency",
+    "data_view": "v_repeat_purchase_rate_grid_purchase_frequency",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "segment",
+      "customer_count",
+      "repeat_purchase_pct",
+      "avg_orders_per_customer",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "churn_risk_by_region",
+    "widget_id": "kpi_risk_customers",
+    "data_view": "v_churn_risk_by_region_kpi_risk_customers",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "churn_risk_by_region",
+    "widget_id": "chart_risk_map",
+    "data_view": "v_churn_risk_by_region_chart_risk_map",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "churn_risk_by_region",
+    "widget_id": "grid_risk_table",
+    "data_view": "v_churn_risk_by_region_grid_risk_table",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "high_risk_customers",
+      "risk_rate_pct",
+      "retention_action",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_lifetime_value",
+    "widget_id": "kpi_clv",
+    "data_view": "v_customer_lifetime_value_kpi_clv",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_lifetime_value",
+    "widget_id": "chart_clv_by_segment",
+    "data_view": "v_customer_lifetime_value_chart_clv_by_segment",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "segment",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "customer_lifetime_value",
+    "widget_id": "grid_clv_table",
+    "data_view": "v_customer_lifetime_value_grid_clv_table",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "region",
+      "channel",
+      "segment",
+      "customer_count",
+      "avg_clv_usd",
+      "avg_order_value",
+      "customer_name",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "inventory_stock_by_region",
+    "widget_id": "kpi_total_units_on_hand",
+    "data_view": "v_inventory_stock_by_region_kpi_total_units_on_hand",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_stock_by_region",
+    "widget_id": "chart_stock_by_region",
+    "data_view": "v_inventory_stock_by_region_chart_stock_by_region",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_stock_by_region",
+    "widget_id": "grid_stock_summary",
+    "data_view": "v_inventory_stock_by_region_grid_stock_summary",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "units_on_hand",
+      "days_of_cover",
+      "stockout_risk",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_value_by_category",
+    "widget_id": "kpi_inventory_value",
+    "data_view": "v_inventory_value_by_category_kpi_inventory_value",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "category",
+      "region",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "category",
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_value_by_category",
+    "widget_id": "chart_value_by_category",
+    "data_view": "v_inventory_value_by_category_chart_value_by_category",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "category",
+      "region",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "category",
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_value_by_category",
+    "widget_id": "grid_value_table",
+    "data_view": "v_inventory_value_by_category_grid_value_table",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "category",
+      "region",
+      "product_name",
+      "units_on_hand",
+      "inventory_value_usd",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "category",
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "supplier_performance",
+    "widget_id": "kpi_on_time_delivery",
+    "data_view": "v_supplier_performance_kpi_on_time_delivery",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "supplier_performance",
+    "widget_id": "chart_supplier_scores",
+    "data_view": "v_supplier_performance_chart_supplier_scores",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "supplier",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "supplier_performance",
+    "widget_id": "grid_supplier_table",
+    "data_view": "v_supplier_performance_grid_supplier_table",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "supplier",
+      "otd_pct",
+      "fill_rate_pct",
+      "avg_lead_time_days",
+      "status",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "low_stock_alerts",
+    "widget_id": "kpi_alert_count",
+    "data_view": "v_low_stock_alerts_kpi_alert_count",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "low_stock_alerts",
+    "widget_id": "chart_alert_volume",
+    "data_view": "v_low_stock_alerts_chart_alert_volume",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "low_stock_alerts",
+    "widget_id": "grid_alert_list",
+    "data_view": "v_low_stock_alerts_grid_alert_list",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "units_on_hand",
+      "days_of_cover",
+      "priority",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "stock_turnover_by_product",
+    "widget_id": "kpi_turnover_rate",
+    "data_view": "v_stock_turnover_by_product_kpi_turnover_rate",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "category",
+      "region",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "category",
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "stock_turnover_by_product",
+    "widget_id": "chart_turnover_leaderboard",
+    "data_view": "v_stock_turnover_by_product_chart_turnover_leaderboard",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "category",
+      "region",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "category",
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "stock_turnover_by_product",
+    "widget_id": "grid_turnover_table",
+    "data_view": "v_stock_turnover_by_product_grid_turnover_table",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "category",
+      "region",
+      "product_name",
+      "turnover_ratio",
+      "avg_days_inventory",
+      "units_sold",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "category",
+      "region"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "purchase_order_backlog",
+    "widget_id": "kpi_open_po_value",
+    "data_view": "v_purchase_order_backlog_kpi_open_po_value",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "supplier",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "supplier"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "purchase_order_backlog",
+    "widget_id": "chart_po_timing",
+    "data_view": "v_purchase_order_backlog_chart_po_timing",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "supplier",
+      "date",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "supplier"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "purchase_order_backlog",
+    "widget_id": "grid_po_table",
+    "data_view": "v_purchase_order_backlog_grid_po_table",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "supplier",
+      "product_name",
+      "po_value_usd",
+      "eta_date",
+      "status",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "supplier"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_aging_summary",
+    "widget_id": "kpi_aging_value",
+    "data_view": "v_inventory_aging_summary_kpi_aging_value",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_aging_summary",
+    "widget_id": "chart_age_bucket",
+    "data_view": "v_inventory_aging_summary_chart_age_bucket",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "age_bucket",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "inventory_aging_summary",
+    "widget_id": "grid_aging_table",
+    "data_view": "v_inventory_aging_summary_grid_aging_table",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "category",
+      "product_name",
+      "days_in_stock",
+      "units_on_hand",
+      "value_usd",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "user_access_overview",
+    "widget_id": "kpi_total_users",
+    "data_view": "v_user_access_overview_kpi_total_users",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "role",
+      "team",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "role",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "user_access_overview",
+    "widget_id": "chart_access_mix",
+    "data_view": "v_user_access_overview_chart_access_mix",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "role",
+      "team",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "role",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "user_access_overview",
+    "widget_id": "grid_access_table",
+    "data_view": "v_user_access_overview_grid_access_table",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "role",
+      "team",
+      "user_name",
+      "last_login",
+      "status",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "role",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "audit_log_activity",
+    "widget_id": "kpi_failed_events",
+    "data_view": "v_audit_log_activity_kpi_failed_events",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "event_type",
+      "team",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "event_type",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "audit_log_activity",
+    "widget_id": "chart_activity_timeline",
+    "data_view": "v_audit_log_activity_chart_activity_timeline",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "event_type",
+      "team",
+      "date",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "event_type",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "audit_log_activity",
+    "widget_id": "grid_audit_table",
+    "data_view": "v_audit_log_activity_grid_audit_table",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "event_type",
+      "team",
+      "event_time",
+      "user_name",
+      "action",
+      "entity",
+      "result",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "event_type",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "system_role_matrix",
+    "widget_id": "kpi_secure_roles",
+    "data_view": "v_system_role_matrix_kpi_secure_roles",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "role",
+      "team",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "role",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "system_role_matrix",
+    "widget_id": "chart_role_coverage",
+    "data_view": "v_system_role_matrix_chart_role_coverage",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "role",
+      "team",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "role",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "system_role_matrix",
+    "widget_id": "grid_role_matrix",
+    "data_view": "v_system_role_matrix_grid_role_matrix",
+    "base": "base_customers",
+    "columns": [
+      "signup_date",
+      "role",
+      "team",
+      "module_access",
+      "sensitive_actions",
+      "approval_required",
+      "customer_name",
+      "segment",
+      "customer_id"
+    ],
+    "filterable_columns": [
+      "role",
+      "team"
+    ],
+    "date_column": "signup_date"
+  },
+  {
+    "page_id": "expense_variance_by_region",
+    "widget_id": "kpi_variance_usd",
+    "data_view": "v_expense_variance_by_region_kpi_variance_usd",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "expense_variance_by_region",
+    "widget_id": "chart_variance_by_region",
+    "data_view": "v_expense_variance_by_region_chart_variance_by_region",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "expense_variance_by_region",
+    "widget_id": "grid_variance_detail",
+    "data_view": "v_expense_variance_by_region_grid_variance_detail",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "budget_amount",
+      "actual_spent",
+      "variance_usd",
+      "variance_pct",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "margin_protection_index",
+    "widget_id": "kpi_margin_index",
+    "data_view": "v_margin_protection_index_kpi_margin_index",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "margin_protection_index",
+    "widget_id": "chart_margin_index",
+    "data_view": "v_margin_protection_index_chart_margin_index",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "date",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "margin_protection_index",
+    "widget_id": "grid_margin_table",
+    "data_view": "v_margin_protection_index_grid_margin_table",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "category",
+      "margin_index",
+      "gross_profit",
+      "loss_risk",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "category"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "shipping_performance_by_region",
+    "widget_id": "kpi_on_time_delivery",
+    "data_view": "v_shipping_performance_by_region_kpi_on_time_delivery",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "channel",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "shipping_performance_by_region",
+    "widget_id": "chart_shipping_by_region",
+    "data_view": "v_shipping_performance_by_region_chart_shipping_by_region",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "channel",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "shipping_performance_by_region",
+    "widget_id": "grid_shipping_table",
+    "data_view": "v_shipping_performance_by_region_grid_shipping_table",
+    "base": "base_expenses",
+    "columns": [
+      "month",
+      "region",
+      "channel",
+      "carrier",
+      "on_time_pct",
+      "avg_delivery_days",
+      "total_shipments",
+      "expense_type",
+      "amount"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "month"
+  },
+  {
+    "page_id": "warehouse_capacity_utilization",
+    "widget_id": "kpi_utilization_pct",
+    "data_view": "v_warehouse_capacity_utilization_kpi_utilization_pct",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "channel",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "warehouse_capacity_utilization",
+    "widget_id": "chart_capacity_by_region",
+    "data_view": "v_warehouse_capacity_utilization_chart_capacity_by_region",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "channel",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "snapshot_date"
+  },
+  {
+    "page_id": "warehouse_capacity_utilization",
+    "widget_id": "grid_capacity_table",
+    "data_view": "v_warehouse_capacity_utilization_grid_capacity_table",
+    "base": "base_inventory",
+    "columns": [
+      "snapshot_date",
+      "region",
+      "channel",
+      "warehouse_name",
+      "utilization_pct",
+      "free_space_pct",
+      "peak_volume",
+      "product_name",
+      "stock_on_hand",
+      "reorder_level"
+    ],
+    "filterable_columns": [
+      "region",
+      "channel"
+    ],
+    "date_column": "snapshot_date"
+  }
+]

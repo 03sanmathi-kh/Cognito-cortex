@@ -1,0 +1,110 @@
+{
+  "metrics": [
+    {
+      "id": "appointments",
+      "label": "Appointments",
+      "description": "Total number of scheduled and completed clinic appointments.",
+      "base_table": "appointments",
+      "date_column": "appointment_date",
+      "sql_expression": "COUNT(*)",
+      "format": "count",
+      "home_page": "clinic_overview",
+      "page_ids": [
+        "clinic_overview",
+        "appointments_trend",
+        "appointments_by_department"
+      ]
+    },
+    {
+      "id": "no_show_rate",
+      "label": "No-show Rate",
+      "description": "Percentage of appointments where the patient did not attend.",
+      "base_table": "appointments",
+      "date_column": "appointment_date",
+      "sql_expression": "ROUND(100.0 * COUNT(CASE WHEN status = 'No-Show' THEN 1 END) / NULLIF(COUNT(*), 0), 1)",
+      "format": "percent",
+      "home_page": "no_show_analysis",
+      "page_ids": [
+        "no_show_analysis",
+        "status_breakdown"
+      ]
+    },
+    {
+      "id": "cancellation_rate",
+      "label": "Cancellation Rate",
+      "description": "Percentage of clinic appointments cancelled.",
+      "base_table": "appointments",
+      "date_column": "appointment_date",
+      "sql_expression": "ROUND(100.0 * COUNT(CASE WHEN status = 'Cancelled' THEN 1 END) / NULLIF(COUNT(*), 0), 1)",
+      "format": "percent",
+      "home_page": "cancellations_page",
+      "page_ids": [
+        "cancellations_page",
+        "status_breakdown"
+      ]
+    },
+    {
+      "id": "avg_wait_minutes",
+      "label": "Average Wait Minutes",
+      "description": "Average patient wait time in minutes.",
+      "base_table": "appointments",
+      "date_column": "appointment_date",
+      "sql_expression": "ROUND(AVG(wait_minutes), 1)",
+      "format": "count",
+      "home_page": "wait_times_page",
+      "page_ids": [
+        "wait_times_page"
+      ]
+    },
+    {
+      "id": "fee_collected",
+      "label": "Fee Collected",
+      "description": "Total fees collected from completed appointments.",
+      "base_table": "appointments",
+      "date_column": "appointment_date",
+      "sql_expression": "SUM(CASE WHEN status = 'Completed' THEN fee ELSE 0.0 END)",
+      "format": "currency",
+      "home_page": "fee_collection_page",
+      "page_ids": [
+        "fee_collection_page"
+      ]
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "department",
+      "label": "Department",
+      "column": "department",
+      "table": "appointments",
+      "description": "Clinical department"
+    },
+    {
+      "id": "doctor",
+      "label": "Doctor",
+      "column": "doctor",
+      "table": "appointments",
+      "description": "Consulting doctor"
+    },
+    {
+      "id": "status",
+      "label": "Status",
+      "column": "status",
+      "table": "appointments",
+      "description": "Appointment status"
+    },
+    {
+      "id": "visit_type",
+      "label": "Visit Type",
+      "column": "visit_type",
+      "table": "appointments",
+      "description": "Visit category (New, Follow-up, Emergency)"
+    },
+    {
+      "id": "age_group",
+      "label": "Age Group",
+      "column": "age_group",
+      "table": "appointments",
+      "description": "Patient age bracket (Child, Adult, Senior)"
+    }
+  ]
+}

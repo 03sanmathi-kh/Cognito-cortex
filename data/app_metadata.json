@@ -1,0 +1,4836 @@
+{
+  "app": {
+    "id": "meridian",
+    "name": "Meridian Distribution",
+    "currency": "USD"
+  },
+  "dimensions": {
+    "regions": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "channels": [
+      "Online",
+      "Retail",
+      "Partner"
+    ],
+    "categories": [
+      {
+        "name": "Packaged Foods",
+        "products": [
+          "Granola Crunch Cereal",
+          "Organic Pasta Sauce",
+          "Artisan Roasted Nuts"
+        ]
+      },
+      {
+        "name": "Beverages",
+        "products": [
+          "Sparkling Spring Water",
+          "Cold Brew Coffee",
+          "Citrus Electrolyte Tea"
+        ]
+      },
+      {
+        "name": "Household",
+        "products": [
+          "Eco Dish Soap",
+          "Multi-Surface Spray",
+          "Recycled Paper Towels"
+        ]
+      },
+      {
+        "name": "Personal Care",
+        "products": [
+          "Hydrating Herbal Lotion",
+          "Botanical Body Wash",
+          "Bamboo Toothbrush"
+        ]
+      }
+    ],
+    "date_grain": "day",
+    "date_range": {
+      "start": "2024-09-30",
+      "end": "2026-09-30"
+    }
+  },
+  "directories": [
+    {
+      "id": "sales",
+      "title": "Sales",
+      "icon": "BadgePercent",
+      "subdirectories": [
+        {
+          "id": "regional",
+          "title": "Regional"
+        },
+        {
+          "id": "products",
+          "title": "Products"
+        },
+        {
+          "id": "targets",
+          "title": "Targets"
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Finance",
+      "icon": "CircleDollarSign",
+      "subdirectories": [
+        {
+          "id": "revenue",
+          "title": "Revenue"
+        },
+        {
+          "id": "expenses",
+          "title": "Expenses"
+        },
+        {
+          "id": "margins",
+          "title": "Margins"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operations",
+      "icon": "Truck",
+      "subdirectories": [
+        {
+          "id": "orders",
+          "title": "Orders"
+        },
+        {
+          "id": "fulfillment",
+          "title": "Fulfillment"
+        }
+      ]
+    },
+    {
+      "id": "customers",
+      "title": "Customers",
+      "icon": "Users",
+      "subdirectories": [
+        {
+          "id": "segments",
+          "title": "Segments"
+        },
+        {
+          "id": "retention",
+          "title": "Retention"
+        }
+      ]
+    },
+    {
+      "id": "inventory",
+      "title": "Inventory",
+      "icon": "Boxes",
+      "subdirectories": [
+        {
+          "id": "stock",
+          "title": "Stock"
+        },
+        {
+          "id": "suppliers",
+          "title": "Suppliers"
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "title": "Admin",
+      "icon": "ShieldCheck",
+      "subdirectories": [
+        {
+          "id": "users",
+          "title": "Users"
+        },
+        {
+          "id": "audit",
+          "title": "Audit"
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": "revenue_by_region",
+      "title": "Revenue by Region",
+      "description": "View total gross revenue segmented across North, South, East, and West sales territories. Compare regional revenue contributions to identify geographic growth drivers and underperforming hubs.",
+      "directory": "sales",
+      "subdirectory": "regional",
+      "route": "/sales/regional/revenue-by-region",
+      "keywords": [
+        "regional revenue",
+        "sales by territory",
+        "geographic sales",
+        "revenue breakdown",
+        "territory earnings",
+        "sales by region"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_total_revenue",
+          "type": "kpi",
+          "title": "Total Regional Revenue",
+          "data_view": "v_revenue_by_region_kpi_total_revenue",
+          "measures": [
+            "sum_revenue",
+            "revenue_growth_pct"
+          ]
+        },
+        {
+          "id": "chart_regional_split",
+          "type": "bar_chart",
+          "title": "Revenue by Territory",
+          "data_view": "v_revenue_by_region_chart_regional_split",
+          "measures": [
+            "revenue"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_region_summary",
+          "type": "grid",
+          "title": "Regional Performance Table",
+          "data_view": "v_revenue_by_region_grid_region_summary",
+          "columns": [
+            "region",
+            "order_count",
+            "gross_revenue",
+            "avg_order_value"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "today",
+        "last_7_days",
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year",
+        "custom"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "gross_revenue",
+          "label": "Revenue (High to Low)"
+        },
+        {
+          "field": "region",
+          "label": "Region Name"
+        }
+      ],
+      "default_sort": {
+        "field": "gross_revenue",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "revenue_by_region_and_product",
+      "title": "Revenue by Region and Product",
+      "description": "Examine product-level revenue breakdowns within specific geographic distribution territories. Uncover which individual catalog items drive top-line numbers in each regional market.",
+      "directory": "sales",
+      "subdirectory": "regional",
+      "route": "/sales/regional/revenue-by-region-and-product",
+      "keywords": [
+        "regional product sales",
+        "territory sku revenue",
+        "product sales by region",
+        "skus by area",
+        "product performance by zone",
+        "item revenue by territory"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_top_sku_region",
+          "type": "kpi",
+          "title": "Top Regional SKU Revenue",
+          "data_view": "v_revenue_by_region_and_product_kpi_top_sku_region",
+          "measures": [
+            "top_sku_revenue",
+            "top_sku_share_pct"
+          ]
+        },
+        {
+          "id": "chart_stacked_product_region",
+          "type": "bar_chart",
+          "title": "Product Revenue by Region",
+          "data_view": "v_revenue_by_region_and_product_chart_stacked_product_region",
+          "measures": [
+            "revenue"
+          ],
+          "columns": [
+            "region",
+            "product_name"
+          ]
+        },
+        {
+          "id": "grid_matrix_sales",
+          "type": "grid",
+          "title": "Product by Region Detail",
+          "data_view": "v_revenue_by_region_and_product_grid_matrix_sales",
+          "columns": [
+            "region",
+            "category",
+            "product_name",
+            "units_sold",
+            "revenue"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "today",
+        "last_7_days",
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year",
+        "custom"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "revenue",
+          "label": "Revenue (Desc)"
+        },
+        {
+          "field": "units_sold",
+          "label": "Units Sold (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "revenue",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "regional_sales_targets",
+      "title": "Regional Sales Targets",
+      "description": "Track actual sales figures compared against quarterly budget quotas by region. Monitor attainment percentages to ensure sales teams stay on course to reach corporate targets.",
+      "directory": "sales",
+      "subdirectory": "targets",
+      "route": "/sales/targets/regional-sales-targets",
+      "keywords": [
+        "sales quota by region",
+        "regional target tracking",
+        "goal attainment",
+        "quota pacing",
+        "territory targets",
+        "budget vs actual sales"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_target_attainment",
+          "type": "kpi",
+          "title": "Overall Target Attainment",
+          "data_view": "v_regional_sales_targets_kpi_target_attainment",
+          "measures": [
+            "quota_pct",
+            "quota_gap"
+          ]
+        },
+        {
+          "id": "chart_target_variance",
+          "type": "bar_chart",
+          "title": "Target vs Actual by Territory",
+          "data_view": "v_regional_sales_targets_chart_target_variance",
+          "measures": [
+            "target_amount",
+            "actual_amount"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_targets_attainment",
+          "type": "grid",
+          "title": "Regional Attainment Breakdown",
+          "data_view": "v_regional_sales_targets_grid_targets_attainment",
+          "columns": [
+            "region",
+            "target_amount",
+            "actual_amount",
+            "attainment_pct",
+            "status"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "attainment_pct",
+          "label": "Attainment % (Desc)"
+        },
+        {
+          "field": "actual_amount",
+          "label": "Actual Sales (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "attainment_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "regional_sales_trend",
+      "title": "Regional Sales Trend",
+      "description": "Analyze historic and period-over-period sales trajectories across all four distribution zones. Spot seasonal momentum shifts and acceleration across specific territory timelines.",
+      "directory": "sales",
+      "subdirectory": "regional",
+      "route": "/sales/regional/regional-sales-trend",
+      "keywords": [
+        "sales trajectory",
+        "territory trend",
+        "sales momentum",
+        "regional history",
+        "periodic sales by region",
+        "sales timeline"
+      ],
+      "widgets": [
+        {
+          "id": "chart_regional_timeline",
+          "type": "line_chart",
+          "title": "Territory Sales Over Time",
+          "data_view": "v_regional_sales_trend_chart_regional_timeline",
+          "measures": [
+            "revenue"
+          ],
+          "columns": [
+            "date",
+            "region"
+          ]
+        },
+        {
+          "id": "kpi_trend_velocity",
+          "type": "kpi",
+          "title": "Period Velocity Rate",
+          "data_view": "v_regional_sales_trend_kpi_trend_velocity",
+          "measures": [
+            "velocity_growth_pct"
+          ]
+        },
+        {
+          "id": "grid_trend_metrics",
+          "type": "grid",
+          "title": "Weekly Trend Figures",
+          "data_view": "v_regional_sales_trend_grid_trend_metrics",
+          "columns": [
+            "period",
+            "north_revenue",
+            "south_revenue",
+            "east_revenue",
+            "west_revenue"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year",
+        "custom"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "period",
+          "label": "Chronological (Asc)"
+        },
+        {
+          "field": "revenue",
+          "label": "Volume (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "period",
+        "order": "asc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "top_products_by_region",
+      "title": "Top Products by Region",
+      "description": "Rank best-selling distribution items by total volume and dollar value per regional market. Focus local inventory allocation on high-velocity catalog champions.",
+      "directory": "sales",
+      "subdirectory": "products",
+      "route": "/sales/products/top-products-by-region",
+      "keywords": [
+        "best sellers by region",
+        "top skus per area",
+        "leading products by territory",
+        "highest volume items",
+        "popular skus",
+        "regional leaders"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_top_selling_item",
+          "type": "kpi",
+          "title": "Leading SKU Contribution",
+          "data_view": "v_top_products_by_region_kpi_top_selling_item",
+          "measures": [
+            "top_item_units",
+            "top_item_revenue"
+          ]
+        },
+        {
+          "id": "chart_product_leaderboard",
+          "type": "bar_chart",
+          "title": "Top Products Leaderboard",
+          "data_view": "v_top_products_by_region_chart_product_leaderboard",
+          "measures": [
+            "units_sold"
+          ],
+          "columns": [
+            "product_name",
+            "region"
+          ]
+        },
+        {
+          "id": "grid_product_rankings",
+          "type": "grid",
+          "title": "Regional Product Rankings",
+          "data_view": "v_top_products_by_region_grid_product_rankings",
+          "columns": [
+            "rank",
+            "product_name",
+            "category",
+            "region",
+            "revenue",
+            "units_sold"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": "North"
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_7_days",
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "units_sold",
+          "label": "Units Sold (Desc)"
+        },
+        {
+          "field": "revenue",
+          "label": "Revenue (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "units_sold",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "channel_mix_by_region",
+      "title": "Channel Mix by Region",
+      "description": "Inspect sales channel distributions across Online, Retail, and Partner channels for each territory. Optimize fulfillment routing and partner commission programs based on channel adoption.",
+      "directory": "sales",
+      "subdirectory": "regional",
+      "route": "/sales/regional/channel-mix-by-region",
+      "keywords": [
+        "channel breakdown",
+        "sales route share",
+        "partner vs retail",
+        "online channel mix",
+        "regional channel split",
+        "go-to-market channels"
+      ],
+      "widgets": [
+        {
+          "id": "chart_channel_donut",
+          "type": "pie_chart",
+          "title": "Channel Share Distribution",
+          "data_view": "v_channel_mix_by_region_chart_channel_donut",
+          "measures": [
+            "share_pct"
+          ],
+          "columns": [
+            "channel"
+          ]
+        },
+        {
+          "id": "kpi_direct_channel_ratio",
+          "type": "kpi",
+          "title": "Online Channel Share",
+          "data_view": "v_channel_mix_by_region_kpi_direct_channel_ratio",
+          "measures": [
+            "online_pct",
+            "partner_pct"
+          ]
+        },
+        {
+          "id": "grid_channel_table",
+          "type": "grid",
+          "title": "Channel Revenue by Region",
+          "data_view": "v_channel_mix_by_region_grid_channel_table",
+          "columns": [
+            "region",
+            "channel",
+            "order_count",
+            "revenue",
+            "average_margin"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "multi_select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": [
+            "Online",
+            "Retail",
+            "Partner"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "revenue",
+          "label": "Revenue (Desc)"
+        },
+        {
+          "field": "region",
+          "label": "Region"
+        }
+      ],
+      "default_sort": {
+        "field": "revenue",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "product_catalog_sales",
+      "title": "Product Catalog Sales",
+      "description": "Review comprehensive performance metrics across all 12 items in the product catalog. Identify high-growth category items and sunset sluggish inventory.",
+      "directory": "sales",
+      "subdirectory": "products",
+      "route": "/sales/products/product-catalog-sales",
+      "keywords": [
+        "catalog performance",
+        "all product sales",
+        "item revenue",
+        "sku metrics",
+        "product turnover",
+        "sku volume"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_total_skus_active",
+          "type": "kpi",
+          "title": "Active Generating SKUs",
+          "data_view": "v_product_catalog_sales_kpi_total_skus_active",
+          "measures": [
+            "active_skus",
+            "catalog_revenue"
+          ]
+        },
+        {
+          "id": "chart_category_comparison",
+          "type": "bar_chart",
+          "title": "Revenue by Category",
+          "data_view": "v_product_catalog_sales_chart_category_comparison",
+          "measures": [
+            "revenue"
+          ],
+          "columns": [
+            "category"
+          ]
+        },
+        {
+          "id": "grid_catalog_details",
+          "type": "grid",
+          "title": "Catalog Sales Table",
+          "data_view": "v_product_catalog_sales_grid_catalog_details",
+          "columns": [
+            "product_name",
+            "category",
+            "unit_price",
+            "units_sold",
+            "gross_revenue"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "category",
+          "type": "multi_select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "gross_revenue",
+          "label": "Gross Revenue (Desc)"
+        },
+        {
+          "field": "units_sold",
+          "label": "Units Sold (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "gross_revenue",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": false,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "sales_quota_attainment",
+      "title": "Sales Quota Attainment",
+      "description": "Review enterprise sales representative and regional director quota achievement tables. Calculate commission payout readiness and pacing towards annual executive goals.",
+      "directory": "sales",
+      "subdirectory": "targets",
+      "route": "/sales/targets/sales-quota-attainment",
+      "keywords": [
+        "quota progress",
+        "commission attainment",
+        "sales goal pacing",
+        "target completion",
+        "payout readiness",
+        "quota vs forecast"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_quota_pacing",
+          "type": "kpi",
+          "title": "Quarterly Pacing Rate",
+          "data_view": "v_sales_quota_attainment_kpi_quota_pacing",
+          "measures": [
+            "pacing_pct",
+            "projected_finish"
+          ]
+        },
+        {
+          "id": "grid_quota_leaderboard",
+          "type": "grid",
+          "title": "Regional Quota Table",
+          "data_view": "v_sales_quota_attainment_grid_quota_leaderboard",
+          "columns": [
+            "region",
+            "quota_target",
+            "actual_closed",
+            "variance_pct",
+            "tier"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "variance_pct",
+          "label": "Variance (Desc)"
+        },
+        {
+          "field": "actual_closed",
+          "label": "Closed Volume (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "variance_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "discount_and_pricing_performance",
+      "title": "Discount and Pricing Performance",
+      "description": "Analyze discounting depth across regions and wholesale partner agreements. Ensure markdown thresholds maintain target gross margins and do not erode profitability.",
+      "directory": "sales",
+      "subdirectory": "products",
+      "route": "/sales/products/discount-and-pricing-performance",
+      "keywords": [
+        "discount analysis",
+        "markdown impact",
+        "pricing depth",
+        "promo discounts",
+        "wholesale margins",
+        "concession tracking"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_avg_discount_rate",
+          "type": "kpi",
+          "title": "Average Discount Given",
+          "data_view": "v_discount_and_pricing_performance_kpi_avg_discount_rate",
+          "measures": [
+            "avg_discount_pct",
+            "discount_impact_usd"
+          ]
+        },
+        {
+          "id": "chart_discount_by_channel",
+          "type": "bar_chart",
+          "title": "Discounting by Channel",
+          "data_view": "v_discount_and_pricing_performance_chart_discount_by_channel",
+          "measures": [
+            "discount_usd"
+          ],
+          "columns": [
+            "channel"
+          ]
+        },
+        {
+          "id": "grid_discount_breakdown",
+          "type": "grid",
+          "title": "Product Pricing & Markdown Table",
+          "data_view": "v_discount_and_pricing_performance_grid_discount_breakdown",
+          "columns": [
+            "product_name",
+            "list_price",
+            "avg_sold_price",
+            "discount_pct",
+            "net_margin"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "channel",
+          "type": "multi_select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": [
+            "Online",
+            "Retail",
+            "Partner"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "discount_pct",
+          "label": "Discount % (Desc)"
+        },
+        {
+          "field": "discount_impact_usd",
+          "label": "Dollar Impact (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "discount_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": false,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "quarterly_revenue_summary",
+      "title": "Quarterly Revenue Summary",
+      "description": "Review corporate-wide quarterly revenue totals and compare against annualized forecasts. View year-over-year revenue curves to evaluate fiscal health and seasonal surges.",
+      "directory": "finance",
+      "subdirectory": "revenue",
+      "route": "/finance/revenue/quarterly-revenue-summary",
+      "keywords": [
+        "quarterly earnings",
+        "fiscal revenue",
+        "topline summary",
+        "quarterly performance",
+        "revenue audit",
+        "executive revenue report"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_qtr_revenue",
+          "type": "kpi",
+          "title": "Current Quarter Revenue",
+          "data_view": "v_quarterly_revenue_summary_kpi_qtr_revenue",
+          "measures": [
+            "revenue_total",
+            "yoy_pct"
+          ]
+        },
+        {
+          "id": "chart_quarterly_run_rate",
+          "type": "line_chart",
+          "title": "Quarterly Revenue Run-Rate",
+          "data_view": "v_quarterly_revenue_summary_chart_quarterly_run_rate",
+          "measures": [
+            "current_qtr",
+            "prior_year_qtr"
+          ],
+          "columns": [
+            "week"
+          ]
+        },
+        {
+          "id": "grid_qtr_breakdown",
+          "type": "grid",
+          "title": "Quarterly Financial Overview",
+          "data_view": "v_quarterly_revenue_summary_grid_qtr_breakdown",
+          "columns": [
+            "fiscal_quarter",
+            "gross_revenue",
+            "returns_allowances",
+            "net_revenue",
+            "growth_rate"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "this_quarter",
+        "last_quarter",
+        "this_year",
+        "custom"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "gross_revenue",
+          "label": "Revenue (Desc)"
+        },
+        {
+          "field": "fiscal_quarter",
+          "label": "Quarter"
+        }
+      ],
+      "default_sort": {
+        "field": "fiscal_quarter",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "revenue_by_channel",
+      "title": "Revenue by Channel",
+      "description": "Assess revenue yield from Online, Retail, and Partner commerce channels. Compare net collections to determine commercial expansion priorities.",
+      "directory": "finance",
+      "subdirectory": "revenue",
+      "route": "/finance/revenue/revenue-by-channel",
+      "keywords": [
+        "channel revenue",
+        "partner sales revenue",
+        "ecommerce earnings",
+        "retail channel revenue",
+        "channel financial split",
+        "channel yield"
+      ],
+      "widgets": [
+        {
+          "id": "chart_channel_breakdown",
+          "type": "bar_chart",
+          "title": "Channel Revenue Comparison",
+          "data_view": "v_revenue_by_channel_chart_channel_breakdown",
+          "measures": [
+            "revenue"
+          ],
+          "columns": [
+            "channel"
+          ]
+        },
+        {
+          "id": "kpi_top_channel",
+          "type": "kpi",
+          "title": "Primary Channel Share",
+          "data_view": "v_revenue_by_channel_kpi_top_channel",
+          "measures": [
+            "primary_share_pct",
+            "primary_revenue"
+          ]
+        },
+        {
+          "id": "grid_channel_revenue",
+          "type": "grid",
+          "title": "Channel Accounting Grid",
+          "data_view": "v_revenue_by_channel_grid_channel_revenue",
+          "columns": [
+            "channel",
+            "gross_sales",
+            "discounts",
+            "net_sales",
+            "margin_pct"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "channel",
+          "type": "multi_select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": [
+            "Online",
+            "Retail",
+            "Partner"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "net_sales",
+          "label": "Net Sales (Desc)"
+        },
+        {
+          "field": "margin_pct",
+          "label": "Margin % (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "net_sales",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": false,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "operating_expenses_breakdown",
+      "title": "Operating Expenses Breakdown",
+      "description": "Track warehousing, logistics, facility and general overhead expenditures. Verify that operating overhead scales predictably against overall product volume.",
+      "directory": "finance",
+      "subdirectory": "expenses",
+      "route": "/finance/expenses/operating-expenses-breakdown",
+      "keywords": [
+        "opex tracking",
+        "operating expenses",
+        "warehouse overhead",
+        "operating costs",
+        "facility spend",
+        "administrative expenses"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_total_opex",
+          "type": "kpi",
+          "title": "Total Operating Expenses",
+          "data_view": "v_operating_expenses_breakdown_kpi_total_opex",
+          "measures": [
+            "total_opex",
+            "opex_ratio_pct"
+          ]
+        },
+        {
+          "id": "chart_opex_categories",
+          "type": "pie_chart",
+          "title": "Expense Distribution",
+          "data_view": "v_operating_expenses_breakdown_chart_opex_categories",
+          "measures": [
+            "amount"
+          ],
+          "columns": [
+            "expense_category"
+          ]
+        },
+        {
+          "id": "grid_expense_ledger",
+          "type": "grid",
+          "title": "Expense Ledger Summary",
+          "data_view": "v_operating_expenses_breakdown_grid_expense_ledger",
+          "columns": [
+            "expense_category",
+            "budgeted",
+            "actual_spent",
+            "variance",
+            "status"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "actual_spent",
+          "label": "Actual Spent (Desc)"
+        },
+        {
+          "field": "variance",
+          "label": "Variance (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "actual_spent",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        },
+        {
+          "id": "save_view",
+          "label": "Save view",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "logistics_and_freight_costs",
+      "title": "Logistics and Freight Costs",
+      "description": "Audit regional trucking and delivery shipping costs per freight mile and pallet. Benchmark shipping surcharges against negotiated third-party carrier rates.",
+      "directory": "finance",
+      "subdirectory": "expenses",
+      "route": "/finance/expenses/logistics-and-freight-costs",
+      "keywords": [
+        "freight cost",
+        "shipping expenses",
+        "transportation spend",
+        "carrier bills",
+        "logistics fees",
+        "delivery costs"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_avg_freight_rate",
+          "type": "kpi",
+          "title": "Cost per Shipped Pallet",
+          "data_view": "v_logistics_and_freight_costs_kpi_avg_freight_rate",
+          "measures": [
+            "cost_per_pallet",
+            "pallet_variance_pct"
+          ]
+        },
+        {
+          "id": "chart_freight_by_region",
+          "type": "bar_chart",
+          "title": "Freight Spend by Hub",
+          "data_view": "v_logistics_and_freight_costs_chart_freight_by_region",
+          "measures": [
+            "freight_spend"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_carrier_rates",
+          "type": "grid",
+          "title": "Freight Carrier Cost Breakdown",
+          "data_view": "v_logistics_and_freight_costs_grid_carrier_rates",
+          "columns": [
+            "region",
+            "carrier",
+            "shipment_count",
+            "total_freight_cost",
+            "avg_cost_per_mile"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "total_freight_cost",
+          "label": "Freight Cost (Desc)"
+        },
+        {
+          "field": "shipment_count",
+          "label": "Shipments (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "total_freight_cost",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "gross_margin_by_category",
+      "title": "Gross Margin by Category",
+      "description": "Analyze profit margins across Packaged Foods, Beverages, Household, and Personal Care categories. Isolate lines suffering from cost-of-goods inflation.",
+      "directory": "finance",
+      "subdirectory": "margins",
+      "route": "/finance/margins/gross-margin-by-category",
+      "keywords": [
+        "category margins",
+        "product profitability",
+        "gross margin rate",
+        "margin percentages",
+        "cogs impact",
+        "profit by category"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_blended_margin",
+          "type": "kpi",
+          "title": "Blended Gross Margin",
+          "data_view": "v_gross_margin_by_category_kpi_blended_margin",
+          "measures": [
+            "blended_margin_pct",
+            "margin_target_gap"
+          ]
+        },
+        {
+          "id": "chart_category_margins",
+          "type": "bar_chart",
+          "title": "Margin % by Category",
+          "data_view": "v_gross_margin_by_category_chart_category_margins",
+          "measures": [
+            "margin_pct"
+          ],
+          "columns": [
+            "category"
+          ]
+        },
+        {
+          "id": "grid_margin_audit",
+          "type": "grid",
+          "title": "Category Margin Performance",
+          "data_view": "v_gross_margin_by_category_grid_margin_audit",
+          "columns": [
+            "category",
+            "total_revenue",
+            "cogs",
+            "gross_profit",
+            "margin_pct"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "category",
+          "type": "multi_select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "margin_pct",
+          "label": "Margin % (Desc)"
+        },
+        {
+          "field": "gross_profit",
+          "label": "Gross Profit (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "margin_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": false,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "regional_profitability_margins",
+      "title": "Regional Profitability Margins",
+      "description": "Compare bottom-line operating margins between North, South, East, and West sales hubs. Gauge regional facility contributions to enterprise profitability.",
+      "directory": "finance",
+      "subdirectory": "margins",
+      "route": "/finance/margins/regional-profitability-margins",
+      "keywords": [
+        "territory margin",
+        "regional profit",
+        "zone profitability",
+        "regional contribution",
+        "operating margin by region",
+        "profitability variance"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_top_profit_region",
+          "type": "kpi",
+          "title": "Highest Margin Territory",
+          "data_view": "v_regional_profitability_margins_kpi_top_profit_region",
+          "measures": [
+            "lead_region_name",
+            "lead_margin_pct"
+          ]
+        },
+        {
+          "id": "chart_regional_margin_trend",
+          "type": "line_chart",
+          "title": "Regional Margin Trends",
+          "data_view": "v_regional_profitability_margins_chart_regional_margin_trend",
+          "measures": [
+            "margin_pct"
+          ],
+          "columns": [
+            "month",
+            "region"
+          ]
+        },
+        {
+          "id": "grid_regional_margin_stats",
+          "type": "grid",
+          "title": "Territory Profitability Summary",
+          "data_view": "v_regional_profitability_margins_grid_regional_margin_stats",
+          "columns": [
+            "region",
+            "revenue",
+            "costs",
+            "net_profit",
+            "net_margin_pct"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "net_margin_pct",
+          "label": "Net Margin % (Desc)"
+        },
+        {
+          "field": "net_profit",
+          "label": "Net Profit (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "net_margin_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "order_volume_and_velocity",
+      "title": "Order Volume and Velocity",
+      "description": "Monitor daily order processing rates and package throughput volumes across all active distribution hubs. Ensure operations maintain standard SLA processing velocities.",
+      "directory": "operations",
+      "subdirectory": "orders",
+      "route": "/operations/orders/order-volume-and-velocity",
+      "keywords": [
+        "order velocity",
+        "throughput volume",
+        "daily orders",
+        "order intake",
+        "processing speed",
+        "sla velocity"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_daily_order_volume",
+          "type": "kpi",
+          "title": "Daily Order Volume",
+          "data_view": "v_order_volume_and_velocity_kpi_daily_order_volume",
+          "measures": [
+            "orders_today",
+            "velocity_vs_avg"
+          ]
+        },
+        {
+          "id": "chart_velocity_timeline",
+          "type": "line_chart",
+          "title": "Orders Processed per Day",
+          "data_view": "v_order_volume_and_velocity_chart_velocity_timeline",
+          "measures": [
+            "processed_orders"
+          ],
+          "columns": [
+            "date"
+          ]
+        },
+        {
+          "id": "grid_volume_by_region",
+          "type": "grid",
+          "title": "Regional Order Velocity Table",
+          "data_view": "v_order_volume_and_velocity_grid_volume_by_region",
+          "columns": [
+            "region",
+            "total_orders",
+            "avg_processing_hours",
+            "sla_met_pct"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "today",
+        "last_7_days",
+        "last_30_days",
+        "this_month",
+        "this_quarter"
+      ],
+      "default_date_range": "last_30_days",
+      "sort_options": [
+        {
+          "field": "total_orders",
+          "label": "Orders (Desc)"
+        },
+        {
+          "field": "sla_met_pct",
+          "label": "SLA % (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "total_orders",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "order_status_and_backlog",
+      "title": "Order Status and Backlog",
+      "description": "Inspect unfulfilled orders, processing holds, and warehouse fulfillment queue delays. Resolve backlog bottlenecks before orders exceed delivery commitments.",
+      "directory": "operations",
+      "subdirectory": "orders",
+      "route": "/operations/orders/order-status-and-backlog",
+      "keywords": [
+        "order backlog",
+        "unfulfilled orders",
+        "order queue",
+        "open orders",
+        "fulfillment delays",
+        "processing backlog"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_active_backlog",
+          "type": "kpi",
+          "title": "Current Order Backlog",
+          "data_view": "v_order_status_and_backlog_kpi_active_backlog",
+          "measures": [
+            "backlog_count",
+            "aging_over_48h"
+          ]
+        },
+        {
+          "id": "chart_status_pipeline",
+          "type": "pie_chart",
+          "title": "Fulfillment Queue Status",
+          "data_view": "v_order_status_and_backlog_chart_status_pipeline",
+          "measures": [
+            "count"
+          ],
+          "columns": [
+            "status"
+          ]
+        },
+        {
+          "id": "grid_backlog_orders",
+          "type": "grid",
+          "title": "Aging Backlog Detail",
+          "data_view": "v_order_status_and_backlog_grid_backlog_orders",
+          "columns": [
+            "order_id",
+            "region",
+            "channel",
+            "order_date",
+            "days_pending",
+            "priority"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "today",
+        "last_7_days",
+        "last_30_days",
+        "custom"
+      ],
+      "default_date_range": "last_7_days",
+      "sort_options": [
+        {
+          "field": "days_pending",
+          "label": "Days Pending (Desc)"
+        },
+        {
+          "field": "order_date",
+          "label": "Order Date"
+        }
+      ],
+      "default_sort": {
+        "field": "days_pending",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "regional_fulfillment_lead_time",
+      "title": "Regional Fulfillment Lead Time",
+      "description": "Measure mean pick, pack, and transport lead times across regional warehouses. Pinpoint distribution facilities exhibiting extended turnaround periods.",
+      "directory": "operations",
+      "subdirectory": "fulfillment",
+      "route": "/operations/fulfillment/regional-fulfillment-lead-time",
+      "keywords": [
+        "lead time tracking",
+        "warehouse fulfillment speed",
+        "pick pack time",
+        "dispatch duration",
+        "regional lead time",
+        "fulfillment cycle"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_avg_lead_time",
+          "type": "kpi",
+          "title": "Average Order Lead Time",
+          "data_view": "v_regional_fulfillment_lead_time_kpi_avg_lead_time",
+          "measures": [
+            "avg_days_to_ship",
+            "lead_time_variance"
+          ]
+        },
+        {
+          "id": "chart_lead_time_by_region",
+          "type": "bar_chart",
+          "title": "Fulfillment Days by Region",
+          "data_view": "v_regional_fulfillment_lead_time_chart_lead_time_by_region",
+          "measures": [
+            "days_to_ship"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_lead_time_stats",
+          "type": "grid",
+          "title": "Hub Fulfillment SLA Breakdown",
+          "data_view": "v_regional_fulfillment_lead_time_grid_lead_time_stats",
+          "columns": [
+            "region",
+            "warehouse_code",
+            "avg_pick_hours",
+            "avg_pack_hours",
+            "transit_days",
+            "total_lead_days"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "total_lead_days",
+          "label": "Lead Days (Desc)"
+        },
+        {
+          "field": "region",
+          "label": "Region"
+        }
+      ],
+      "default_sort": {
+        "field": "total_lead_days",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "warehouse_shipment_dispatch",
+      "title": "Warehouse Shipment Dispatch",
+      "description": "Audit daily outbound freight movements and pallet dispatches across all hub loading bays. Coordinate carrier pickups to avoid congestion and demurrage charges.",
+      "directory": "operations",
+      "subdirectory": "fulfillment",
+      "route": "/operations/fulfillment/warehouse-shipment-dispatch",
+      "keywords": [
+        "outbound shipments",
+        "warehouse dispatch",
+        "dock schedule",
+        "pallet loading",
+        "truck departures",
+        "freight outbound"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_daily_dispatches",
+          "type": "kpi",
+          "title": "Dispatches Today",
+          "data_view": "v_warehouse_shipment_dispatch_kpi_daily_dispatches",
+          "measures": [
+            "pallets_dispatched",
+            "truck_loads"
+          ]
+        },
+        {
+          "id": "chart_hourly_dispatch",
+          "type": "bar_chart",
+          "title": "Dispatch Volume by Hour",
+          "data_view": "v_warehouse_shipment_dispatch_chart_hourly_dispatch",
+          "measures": [
+            "pallets"
+          ],
+          "columns": [
+            "dispatch_hour"
+          ]
+        },
+        {
+          "id": "grid_dock_activity",
+          "type": "grid",
+          "title": "Bay Dispatch Manifest",
+          "data_view": "v_warehouse_shipment_dispatch_grid_dock_activity",
+          "columns": [
+            "dispatch_id",
+            "region",
+            "destination",
+            "carrier",
+            "pallet_count",
+            "departure_status"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": "North"
+        }
+      ],
+      "date_range_options": [
+        "today",
+        "last_7_days",
+        "last_30_days"
+      ],
+      "default_date_range": "today",
+      "sort_options": [
+        {
+          "field": "pallet_count",
+          "label": "Pallet Count (Desc)"
+        },
+        {
+          "field": "dispatch_id",
+          "label": "Dispatch ID"
+        }
+      ],
+      "default_sort": {
+        "field": "dispatch_id",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "on_time_in_full_delivery",
+      "title": "On-Time In-Full Delivery",
+      "description": "Calculate customer OTIF fulfillment rates across wholesale and direct distribution lines. Track service level compliance to prevent vendor scorecard penalties.",
+      "directory": "operations",
+      "subdirectory": "fulfillment",
+      "route": "/operations/fulfillment/on-time-in-full-delivery",
+      "keywords": [
+        "otif delivery",
+        "on time fulfillment",
+        "order accuracy",
+        "service level rate",
+        "delivery compliance",
+        "vendor scorecard"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_otif_rate",
+          "type": "kpi",
+          "title": "Enterprise OTIF Rate",
+          "data_view": "v_on_time_in_full_delivery_kpi_otif_rate",
+          "measures": [
+            "otif_pct",
+            "otif_target_gap"
+          ]
+        },
+        {
+          "id": "chart_otif_trend",
+          "type": "line_chart",
+          "title": "OTIF Compliance Over Time",
+          "data_view": "v_on_time_in_full_delivery_chart_otif_trend",
+          "measures": [
+            "otif_percentage"
+          ],
+          "columns": [
+            "week"
+          ]
+        },
+        {
+          "id": "grid_otif_summary",
+          "type": "grid",
+          "title": "Regional Delivery Compliance",
+          "data_view": "v_on_time_in_full_delivery_grid_otif_summary",
+          "columns": [
+            "region",
+            "shipped_orders",
+            "on_time_pct",
+            "in_full_pct",
+            "otif_pct"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "otif_pct",
+          "label": "OTIF % (Desc)"
+        },
+        {
+          "field": "shipped_orders",
+          "label": "Orders (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "otif_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "customer_segments_overview",
+      "title": "Customer Segments Overview",
+      "description": "Evaluate customer distribution across acquisition and lifecycle segments to tune targeting strategy and retention investments.",
+      "directory": "customers",
+      "subdirectory": "segments",
+      "route": "/customers/segments/customer-segments-overview",
+      "keywords": [
+        "customer mix",
+        "segment distribution",
+        "audience portfolio",
+        "customer groups",
+        "segment share"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_total_customers",
+          "type": "kpi",
+          "title": "Total Active Customers",
+          "data_view": "v_customer_segments_overview_kpi_total_customers",
+          "measures": [
+            "active_customers",
+            "customer_growth_pct"
+          ]
+        },
+        {
+          "id": "chart_segment_mix",
+          "type": "pie_chart",
+          "title": "Segment Mix",
+          "data_view": "v_customer_segments_overview_chart_segment_mix",
+          "measures": [
+            "segment_share_pct"
+          ],
+          "columns": [
+            "segment"
+          ]
+        },
+        {
+          "id": "grid_segment_table",
+          "type": "grid",
+          "title": "Customer Segment Details",
+          "data_view": "v_customer_segments_overview_grid_segment_table",
+          "columns": [
+            "segment",
+            "customer_count",
+            "avg_order_value",
+            "retention_pct"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "customer_count",
+          "label": "Customers (Desc)"
+        },
+        {
+          "field": "segment",
+          "label": "Segment Name"
+        }
+      ],
+      "default_sort": {
+        "field": "customer_count",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "customer_revenue_by_segment",
+      "title": "Customer Revenue by Segment",
+      "description": "Compare gross revenue contribution by customer segment to identify the highest-value customers and the most promising growth cohorts.",
+      "directory": "customers",
+      "subdirectory": "segments",
+      "route": "/customers/segments/customer-revenue-by-segment",
+      "keywords": [
+        "segment revenue",
+        "customer value",
+        "high-value customers",
+        "segment sales",
+        "revenue by audience",
+        "total customer contribution"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_segment_revenue",
+          "type": "kpi",
+          "title": "Segment Revenue Total",
+          "data_view": "v_customer_revenue_by_segment_kpi_segment_revenue",
+          "measures": [
+            "revenue_total",
+            "revenue_growth_pct"
+          ]
+        },
+        {
+          "id": "chart_segment_revenue",
+          "type": "bar_chart",
+          "title": "Segment Revenue by Region",
+          "data_view": "v_customer_revenue_by_segment_chart_segment_revenue",
+          "measures": [
+            "revenue"
+          ],
+          "columns": [
+            "segment",
+            "region"
+          ]
+        },
+        {
+          "id": "grid_segment_summary",
+          "type": "grid",
+          "title": "Segment Revenue Details",
+          "data_view": "v_customer_revenue_by_segment_grid_segment_summary",
+          "columns": [
+            "segment",
+            "customer_count",
+            "gross_revenue",
+            "avg_order_value"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "gross_revenue",
+          "label": "Revenue (Desc)"
+        },
+        {
+          "field": "segment",
+          "label": "Segment Name"
+        }
+      ],
+      "default_sort": {
+        "field": "gross_revenue",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "customer_retention_trend",
+      "title": "Customer Retention Trend",
+      "description": "Track retention changes over time and identify the periods where customer loyalty begins to weaken or rebound.",
+      "directory": "customers",
+      "subdirectory": "retention",
+      "route": "/customers/retention/customer-retention-trend",
+      "keywords": [
+        "retention trend",
+        "loyalty curve",
+        "customer churn",
+        "renewal trend",
+        "repeat customer health"
+      ],
+      "widgets": [
+        {
+          "id": "chart_retention_timeline",
+          "type": "line_chart",
+          "title": "Retention Over Time",
+          "data_view": "v_customer_retention_trend_chart_retention_timeline",
+          "measures": [
+            "retention_pct"
+          ],
+          "columns": [
+            "date",
+            "segment"
+          ]
+        },
+        {
+          "id": "kpi_retention_rate",
+          "type": "kpi",
+          "title": "Current Retention Rate",
+          "data_view": "v_customer_retention_trend_kpi_retention_rate",
+          "measures": [
+            "retention_pct",
+            "churn_delta_pct"
+          ]
+        },
+        {
+          "id": "grid_retention_table",
+          "type": "grid",
+          "title": "Retention Metrics by Segment",
+          "data_view": "v_customer_retention_trend_grid_retention_table",
+          "columns": [
+            "segment",
+            "retention_pct",
+            "churn_rate",
+            "repeat_rate"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "retention_pct",
+          "label": "Retention % (Desc)"
+        },
+        {
+          "field": "segment",
+          "label": "Segment Name"
+        }
+      ],
+      "default_sort": {
+        "field": "retention_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "repeat_purchase_rate",
+      "title": "Repeat Purchase Rate",
+      "description": "Measure the share of customers returning for a second purchase and reveal which segments are driving loyalty growth.",
+      "directory": "customers",
+      "subdirectory": "retention",
+      "route": "/customers/retention/repeat-purchase-rate",
+      "keywords": [
+        "repeat purchases",
+        "second order rate",
+        "loyalty rate",
+        "purchase frequency",
+        "repeat customer conversions"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_repeat_rate",
+          "type": "kpi",
+          "title": "Repeat Purchase Rate",
+          "data_view": "v_repeat_purchase_rate_kpi_repeat_rate",
+          "measures": [
+            "repeat_purchase_pct",
+            "repeat_growth_pct"
+          ]
+        },
+        {
+          "id": "chart_repeat_by_segment",
+          "type": "bar_chart",
+          "title": "Repeat Purchase by Segment",
+          "data_view": "v_repeat_purchase_rate_chart_repeat_by_segment",
+          "measures": [
+            "repeat_purchase_pct"
+          ],
+          "columns": [
+            "segment"
+          ]
+        },
+        {
+          "id": "grid_purchase_frequency",
+          "type": "grid",
+          "title": "Purchase Frequency Table",
+          "data_view": "v_repeat_purchase_rate_grid_purchase_frequency",
+          "columns": [
+            "segment",
+            "customer_count",
+            "repeat_purchase_pct",
+            "avg_orders_per_customer"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": "North"
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": "Online"
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "repeat_purchase_pct",
+          "label": "Repeat Rate (Desc)"
+        },
+        {
+          "field": "customer_count",
+          "label": "Customers (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "repeat_purchase_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "churn_risk_by_region",
+      "title": "Churn Risk by Region",
+      "description": "Find geographic pockets with rising churn risk so customer success teams can target retention interventions earlier.",
+      "directory": "customers",
+      "subdirectory": "retention",
+      "route": "/customers/retention/churn-risk-by-region",
+      "keywords": [
+        "at-risk customers",
+        "churn hotspots",
+        "regional attrition",
+        "customer risk by territory",
+        "retention alerts"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_risk_customers",
+          "type": "kpi",
+          "title": "High-Risk Customers",
+          "data_view": "v_churn_risk_by_region_kpi_risk_customers",
+          "measures": [
+            "high_risk_customers",
+            "risk_rate_pct"
+          ]
+        },
+        {
+          "id": "chart_risk_map",
+          "type": "bar_chart",
+          "title": "Churn Risk by Region",
+          "data_view": "v_churn_risk_by_region_chart_risk_map",
+          "measures": [
+            "risk_rate_pct"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_risk_table",
+          "type": "grid",
+          "title": "Risk Detail Lookup",
+          "data_view": "v_churn_risk_by_region_grid_risk_table",
+          "columns": [
+            "region",
+            "high_risk_customers",
+            "risk_rate_pct",
+            "retention_action"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter"
+      ],
+      "default_date_range": "last_30_days",
+      "sort_options": [
+        {
+          "field": "risk_rate_pct",
+          "label": "Risk % (Desc)"
+        },
+        {
+          "field": "region",
+          "label": "Region Name"
+        }
+      ],
+      "default_sort": {
+        "field": "risk_rate_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "customer_lifetime_value",
+      "title": "Customer Lifetime Value",
+      "description": "Benchmark each customer cohort by long-term value to prioritize retention spend and acquisition efficiency.",
+      "directory": "customers",
+      "subdirectory": "segments",
+      "route": "/customers/segments/customer-lifetime-value",
+      "keywords": [
+        "customer value",
+        "lifetime value",
+        "lifetime revenue",
+        "cohort profitability",
+        "long-term worth"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_clv",
+          "type": "kpi",
+          "title": "Average Lifetime Value",
+          "data_view": "v_customer_lifetime_value_kpi_clv",
+          "measures": [
+            "avg_clv_usd",
+            "clv_growth_pct"
+          ]
+        },
+        {
+          "id": "chart_clv_by_segment",
+          "type": "bar_chart",
+          "title": "CLV by Segment",
+          "data_view": "v_customer_lifetime_value_chart_clv_by_segment",
+          "measures": [
+            "avg_clv_usd"
+          ],
+          "columns": [
+            "segment"
+          ]
+        },
+        {
+          "id": "grid_clv_table",
+          "type": "grid",
+          "title": "Cohort Value Insights",
+          "data_view": "v_customer_lifetime_value_grid_clv_table",
+          "columns": [
+            "segment",
+            "customer_count",
+            "avg_clv_usd",
+            "avg_order_value"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": "Online"
+        }
+      ],
+      "date_range_options": [
+        "this_quarter",
+        "last_quarter",
+        "this_year",
+        "custom"
+      ],
+      "default_date_range": "this_year",
+      "sort_options": [
+        {
+          "field": "avg_clv_usd",
+          "label": "Lifetime Value (Desc)"
+        },
+        {
+          "field": "segment",
+          "label": "Segment Name"
+        }
+      ],
+      "default_sort": {
+        "field": "avg_clv_usd",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "inventory_stock_by_region",
+      "title": "Inventory Stock by Region",
+      "description": "Monitor fulfillment stock coverage and inventory availability across each region to prevent stockouts and optimize balancing.",
+      "directory": "inventory",
+      "subdirectory": "stock",
+      "route": "/inventory/stock/inventory-stock-by-region",
+      "keywords": [
+        "stock by region",
+        "inventory coverage",
+        "territory stock levels",
+        "regional stock health",
+        "warehouse availability"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_total_units_on_hand",
+          "type": "kpi",
+          "title": "Units on Hand",
+          "data_view": "v_inventory_stock_by_region_kpi_total_units_on_hand",
+          "measures": [
+            "units_on_hand",
+            "inventory_turnover_pct"
+          ]
+        },
+        {
+          "id": "chart_stock_by_region",
+          "type": "bar_chart",
+          "title": "Inventory by Region",
+          "data_view": "v_inventory_stock_by_region_chart_stock_by_region",
+          "measures": [
+            "units_on_hand"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_stock_summary",
+          "type": "grid",
+          "title": "Regional Stock Table",
+          "data_view": "v_inventory_stock_by_region_grid_stock_summary",
+          "columns": [
+            "region",
+            "units_on_hand",
+            "days_of_cover",
+            "stockout_risk"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_7_days",
+        "last_30_days",
+        "this_month",
+        "this_quarter"
+      ],
+      "default_date_range": "this_month",
+      "sort_options": [
+        {
+          "field": "units_on_hand",
+          "label": "Units on Hand (Desc)"
+        },
+        {
+          "field": "region",
+          "label": "Region Name"
+        }
+      ],
+      "default_sort": {
+        "field": "units_on_hand",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "inventory_value_by_category",
+      "title": "Inventory Value by Category",
+      "description": "Review current inventory value by category to balance working capital and ensure high-margin stock is protected.",
+      "directory": "inventory",
+      "subdirectory": "stock",
+      "route": "/inventory/stock/inventory-value-by-category",
+      "keywords": [
+        "inventory value",
+        "category asset value",
+        "stock valuation",
+        "working capital inventory",
+        "warehouse asset mix"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_inventory_value",
+          "type": "kpi",
+          "title": "Total Inventory Value",
+          "data_view": "v_inventory_value_by_category_kpi_inventory_value",
+          "measures": [
+            "inventory_value_usd",
+            "margin_coverage_pct"
+          ]
+        },
+        {
+          "id": "chart_value_by_category",
+          "type": "bar_chart",
+          "title": "Stock Value by Category",
+          "data_view": "v_inventory_value_by_category_chart_value_by_category",
+          "measures": [
+            "inventory_value_usd"
+          ],
+          "columns": [
+            "category"
+          ]
+        },
+        {
+          "id": "grid_value_table",
+          "type": "grid",
+          "title": "Inventory Valuation Detail",
+          "data_view": "v_inventory_value_by_category_grid_value_table",
+          "columns": [
+            "category",
+            "product_name",
+            "units_on_hand",
+            "inventory_value_usd"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "category",
+          "type": "multi_select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ]
+        },
+        {
+          "name": "region",
+          "type": "select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "inventory_value_usd",
+          "label": "Value (Desc)"
+        },
+        {
+          "field": "category",
+          "label": "Category Name"
+        }
+      ],
+      "default_sort": {
+        "field": "inventory_value_usd",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "supplier_performance",
+      "title": "Supplier Performance",
+      "description": "Assess supplier fill rates, delivery reliability, and service scores to protect supply continuity and vendor quality.",
+      "directory": "inventory",
+      "subdirectory": "suppliers",
+      "route": "/inventory/suppliers/supplier-performance",
+      "keywords": [
+        "supplier scorecard",
+        "vendor reliability",
+        "fill rate",
+        "on-time delivery",
+        "supplier health"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_on_time_delivery",
+          "type": "kpi",
+          "title": "On-Time Delivery Rate",
+          "data_view": "v_supplier_performance_kpi_on_time_delivery",
+          "measures": [
+            "otd_pct",
+            "fill_rate_pct"
+          ]
+        },
+        {
+          "id": "chart_supplier_scores",
+          "type": "bar_chart",
+          "title": "Supplier Score Comparison",
+          "data_view": "v_supplier_performance_chart_supplier_scores",
+          "measures": [
+            "score"
+          ],
+          "columns": [
+            "supplier"
+          ]
+        },
+        {
+          "id": "grid_supplier_table",
+          "type": "grid",
+          "title": "Supplier Detail Table",
+          "data_view": "v_supplier_performance_grid_supplier_table",
+          "columns": [
+            "supplier",
+            "otd_pct",
+            "fill_rate_pct",
+            "avg_lead_time_days",
+            "status"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "last_month",
+        "this_quarter"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "fill_rate_pct",
+          "label": "Fill Rate (Desc)"
+        },
+        {
+          "field": "supplier",
+          "label": "Supplier Name"
+        }
+      ],
+      "default_sort": {
+        "field": "fill_rate_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "low_stock_alerts",
+      "title": "Low Stock Alerts",
+      "description": "Prioritize replenishment actions for products at risk of stockout or service disruption across the network.",
+      "directory": "inventory",
+      "subdirectory": "stock",
+      "route": "/inventory/stock/low-stock-alerts",
+      "keywords": [
+        "stockout alerts",
+        "replenishment urgency",
+        "critical inventory",
+        "low supply coverage",
+        "stock risk"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_alert_count",
+          "type": "kpi",
+          "title": "Critical SKUs",
+          "data_view": "v_low_stock_alerts_kpi_alert_count",
+          "measures": [
+            "alert_count",
+            "stockout_risk_pct"
+          ]
+        },
+        {
+          "id": "chart_alert_volume",
+          "type": "bar_chart",
+          "title": "Alert Volume by Region",
+          "data_view": "v_low_stock_alerts_chart_alert_volume",
+          "measures": [
+            "alert_count"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_alert_list",
+          "type": "grid",
+          "title": "At-Risk Stock Detail",
+          "data_view": "v_low_stock_alerts_grid_alert_list",
+          "columns": [
+            "product_name",
+            "region",
+            "units_on_hand",
+            "days_of_cover",
+            "priority"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "today",
+        "last_7_days",
+        "last_30_days",
+        "this_month"
+      ],
+      "default_date_range": "today",
+      "sort_options": [
+        {
+          "field": "days_of_cover",
+          "label": "Days Coverage (Asc)"
+        },
+        {
+          "field": "region",
+          "label": "Region Name"
+        }
+      ],
+      "default_sort": {
+        "field": "days_of_cover",
+        "order": "asc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "stock_turnover_by_product",
+      "title": "Stock Turnover by Product",
+      "description": "Review how quickly each product turns over so demand-heavy SKUs can be prioritized and slower movers can be rationalized.",
+      "directory": "inventory",
+      "subdirectory": "stock",
+      "route": "/inventory/stock/stock-turnover-by-product",
+      "keywords": [
+        "stock turnover",
+        "inventory velocity",
+        "sku velocity",
+        "product throughput",
+        "fast movers"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_turnover_rate",
+          "type": "kpi",
+          "title": "Average Turnover Rate",
+          "data_view": "v_stock_turnover_by_product_kpi_turnover_rate",
+          "measures": [
+            "turnover_ratio",
+            "avg_days_inventory"
+          ]
+        },
+        {
+          "id": "chart_turnover_leaderboard",
+          "type": "bar_chart",
+          "title": "Fastest Moving SKUs",
+          "data_view": "v_stock_turnover_by_product_chart_turnover_leaderboard",
+          "measures": [
+            "turnover_ratio"
+          ],
+          "columns": [
+            "product_name"
+          ]
+        },
+        {
+          "id": "grid_turnover_table",
+          "type": "grid",
+          "title": "Product Turnover Details",
+          "data_view": "v_stock_turnover_by_product_grid_turnover_table",
+          "columns": [
+            "product_name",
+            "category",
+            "turnover_ratio",
+            "avg_days_inventory",
+            "units_sold"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "category",
+          "type": "multi_select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ]
+        },
+        {
+          "name": "region",
+          "type": "select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "turnover_ratio",
+          "label": "Turnover (Desc)"
+        },
+        {
+          "field": "product_name",
+          "label": "Product Name"
+        }
+      ],
+      "default_sort": {
+        "field": "turnover_ratio",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "purchase_order_backlog",
+      "title": "Purchase Order Backlog",
+      "description": "Track outstanding purchase orders and timing exposure to ensure supply plans stay in step with demand needs.",
+      "directory": "inventory",
+      "subdirectory": "suppliers",
+      "route": "/inventory/suppliers/purchase-order-backlog",
+      "keywords": [
+        "purchase order backlog",
+        "open PO queue",
+        "supplier orders",
+        "outstanding inventory orders",
+        "stock replenishment pipeline"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_open_po_value",
+          "type": "kpi",
+          "title": "Open PO Value",
+          "data_view": "v_purchase_order_backlog_kpi_open_po_value",
+          "measures": [
+            "po_value_usd",
+            "po_count"
+          ]
+        },
+        {
+          "id": "chart_po_timing",
+          "type": "line_chart",
+          "title": "Outstanding Orders Over Time",
+          "data_view": "v_purchase_order_backlog_chart_po_timing",
+          "measures": [
+            "po_value_usd"
+          ],
+          "columns": [
+            "date"
+          ]
+        },
+        {
+          "id": "grid_po_table",
+          "type": "grid",
+          "title": "PO Backlog Detail",
+          "data_view": "v_purchase_order_backlog_grid_po_table",
+          "columns": [
+            "supplier",
+            "product_name",
+            "po_value_usd",
+            "eta_date",
+            "status"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "supplier",
+          "type": "select",
+          "allowed_values": [
+            "Northline Foods",
+            "Harbor Goods",
+            "Summit Supply",
+            "Blue Harbor Logistics"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "po_value_usd",
+          "label": "PO Value (Desc)"
+        },
+        {
+          "field": "eta_date",
+          "label": "ETA Date"
+        }
+      ],
+      "default_sort": {
+        "field": "po_value_usd",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "inventory_aging_summary",
+      "title": "Inventory Aging Summary",
+      "description": "Identify stale inventory and aging stock so markdown decisions can be made before products become stranded assets.",
+      "directory": "inventory",
+      "subdirectory": "stock",
+      "route": "/inventory/stock/inventory-aging-summary",
+      "keywords": [
+        "inventory aging",
+        "slow movers",
+        "stale stock",
+        "aged inventory",
+        "obsolescence risk"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_aging_value",
+          "type": "kpi",
+          "title": "Aged Inventory Value",
+          "data_view": "v_inventory_aging_summary_kpi_aging_value",
+          "measures": [
+            "aged_value_usd",
+            "aged_pct"
+          ]
+        },
+        {
+          "id": "chart_age_bucket",
+          "type": "bar_chart",
+          "title": "Aging Buckets",
+          "data_view": "v_inventory_aging_summary_chart_age_bucket",
+          "measures": [
+            "units"
+          ],
+          "columns": [
+            "age_bucket"
+          ]
+        },
+        {
+          "id": "grid_aging_table",
+          "type": "grid",
+          "title": "Aging Detail",
+          "data_view": "v_inventory_aging_summary_grid_aging_table",
+          "columns": [
+            "product_name",
+            "category",
+            "days_in_stock",
+            "units_on_hand",
+            "value_usd"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "aged_value_usd",
+          "label": "Aged Value (Desc)"
+        },
+        {
+          "field": "days_in_stock",
+          "label": "Days in Stock (Desc)"
+        }
+      ],
+      "default_sort": {
+        "field": "aged_value_usd",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "user_access_overview",
+      "title": "User Access Overview",
+      "description": "Review account access levels and permission coverage to confirm the right teams can see the right operational data.",
+      "directory": "admin",
+      "subdirectory": "users",
+      "route": "/admin/users/user-access-overview",
+      "keywords": [
+        "user permissions",
+        "access matrix",
+        "role coverage",
+        "user activity",
+        "security review"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_total_users",
+          "type": "kpi",
+          "title": "Total Active Users",
+          "data_view": "v_user_access_overview_kpi_total_users",
+          "measures": [
+            "active_users",
+            "sso_coverage_pct"
+          ]
+        },
+        {
+          "id": "chart_access_mix",
+          "type": "pie_chart",
+          "title": "Role Access Mix",
+          "data_view": "v_user_access_overview_chart_access_mix",
+          "measures": [
+            "user_count"
+          ],
+          "columns": [
+            "role"
+          ]
+        },
+        {
+          "id": "grid_access_table",
+          "type": "grid",
+          "title": "User Access Table",
+          "data_view": "v_user_access_overview_grid_access_table",
+          "columns": [
+            "user_name",
+            "role",
+            "team",
+            "last_login",
+            "status"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "role",
+          "type": "select",
+          "allowed_values": [
+            "admin",
+            "regional_manager",
+            "analyst"
+          ],
+          "default": "analyst"
+        },
+        {
+          "name": "team",
+          "type": "select",
+          "allowed_values": [
+            "Sales",
+            "Finance",
+            "Operations",
+            "Customer Success"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_30_days",
+        "this_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_month",
+      "sort_options": [
+        {
+          "field": "user_count",
+          "label": "Users (Desc)"
+        },
+        {
+          "field": "role",
+          "label": "Role"
+        }
+      ],
+      "default_sort": {
+        "field": "user_count",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin"
+      ],
+      "region_scoped": false,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        },
+        {
+          "id": "save_view",
+          "label": "Save view",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "audit_log_activity",
+      "title": "Audit Log Activity",
+      "description": "Inspect recent administrative actions, configuration changes, and anomaly indicators across core operational workflows.",
+      "directory": "admin",
+      "subdirectory": "audit",
+      "route": "/admin/audit/audit-log-activity",
+      "keywords": [
+        "audit trail",
+        "admin actions",
+        "security events",
+        "change log",
+        "access surveillance"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_failed_events",
+          "type": "kpi",
+          "title": "Failed Events",
+          "data_view": "v_audit_log_activity_kpi_failed_events",
+          "measures": [
+            "failed_events",
+            "risk_score"
+          ]
+        },
+        {
+          "id": "chart_activity_timeline",
+          "type": "line_chart",
+          "title": "Audit Events Over Time",
+          "data_view": "v_audit_log_activity_chart_activity_timeline",
+          "measures": [
+            "event_count"
+          ],
+          "columns": [
+            "date"
+          ]
+        },
+        {
+          "id": "grid_audit_table",
+          "type": "grid",
+          "title": "Audit Event Details",
+          "data_view": "v_audit_log_activity_grid_audit_table",
+          "columns": [
+            "event_time",
+            "user_name",
+            "action",
+            "entity",
+            "result"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "event_type",
+          "type": "select",
+          "allowed_values": [
+            "create",
+            "update",
+            "delete",
+            "export",
+            "login"
+          ],
+          "default": null
+        },
+        {
+          "name": "team",
+          "type": "select",
+          "allowed_values": [
+            "Sales",
+            "Finance",
+            "Operations",
+            "Customer Success"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "today",
+        "last_7_days",
+        "last_30_days",
+        "this_month",
+        "this_quarter"
+      ],
+      "default_date_range": "last_7_days",
+      "sort_options": [
+        {
+          "field": "event_time",
+          "label": "Event Time (Desc)"
+        },
+        {
+          "field": "user_name",
+          "label": "User Name"
+        }
+      ],
+      "default_sort": {
+        "field": "event_time",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin"
+      ],
+      "region_scoped": false,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        },
+        {
+          "id": "save_view",
+          "label": "Save view",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "system_role_matrix",
+      "title": "System Role Matrix",
+      "description": "Ensure every team and permission set is aligned to the right operational capabilities and access boundaries.",
+      "directory": "admin",
+      "subdirectory": "users",
+      "route": "/admin/users/system-role-matrix",
+      "keywords": [
+        "role matrix",
+        "access policy",
+        "permission map",
+        "security matrix",
+        "privilege assignment"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_secure_roles",
+          "type": "kpi",
+          "title": "Secured Roles",
+          "data_view": "v_system_role_matrix_kpi_secure_roles",
+          "measures": [
+            "roles_configured",
+            "privilege_coverage_pct"
+          ]
+        },
+        {
+          "id": "chart_role_coverage",
+          "type": "bar_chart",
+          "title": "Role Coverage by Team",
+          "data_view": "v_system_role_matrix_chart_role_coverage",
+          "measures": [
+            "role_count"
+          ],
+          "columns": [
+            "team"
+          ]
+        },
+        {
+          "id": "grid_role_matrix",
+          "type": "grid",
+          "title": "Permission Matrix",
+          "data_view": "v_system_role_matrix_grid_role_matrix",
+          "columns": [
+            "role",
+            "team",
+            "module_access",
+            "sensitive_actions",
+            "approval_required"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "role",
+          "type": "multi_select",
+          "allowed_values": [
+            "admin",
+            "regional_manager",
+            "analyst"
+          ],
+          "default": [
+            "admin",
+            "regional_manager",
+            "analyst"
+          ]
+        },
+        {
+          "name": "team",
+          "type": "select",
+          "allowed_values": [
+            "Sales",
+            "Finance",
+            "Operations",
+            "Customer Success"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "role",
+          "label": "Role"
+        },
+        {
+          "field": "team",
+          "label": "Team Name"
+        }
+      ],
+      "default_sort": {
+        "field": "role",
+        "order": "asc"
+      },
+      "allowed_roles": [
+        "admin"
+      ],
+      "region_scoped": false,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        },
+        {
+          "id": "save_view",
+          "label": "Save view",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "expense_variance_by_region",
+      "title": "Expense Variance by Region",
+      "description": "Compare actual expense performance against approved budgets to catch under- or over-spend patterns in individual regions.",
+      "directory": "finance",
+      "subdirectory": "expenses",
+      "route": "/finance/expenses/expense-variance-by-region",
+      "keywords": [
+        "expense variance",
+        "budget variance",
+        "regional spend",
+        "opex by region",
+        "budget deviation"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_variance_usd",
+          "type": "kpi",
+          "title": "Actual vs Budget Variance",
+          "data_view": "v_expense_variance_by_region_kpi_variance_usd",
+          "measures": [
+            "variance_usd",
+            "variance_pct"
+          ]
+        },
+        {
+          "id": "chart_variance_by_region",
+          "type": "bar_chart",
+          "title": "Expense Variance by Region",
+          "data_view": "v_expense_variance_by_region_chart_variance_by_region",
+          "measures": [
+            "variance_usd"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_variance_detail",
+          "type": "grid",
+          "title": "Regional Expense Detail",
+          "data_view": "v_expense_variance_by_region_grid_variance_detail",
+          "columns": [
+            "region",
+            "budget_amount",
+            "actual_spent",
+            "variance_usd",
+            "variance_pct"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "last_quarter"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "variance_usd",
+          "label": "Variance (Desc)"
+        },
+        {
+          "field": "region",
+          "label": "Region Name"
+        }
+      ],
+      "default_sort": {
+        "field": "variance_usd",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "margin_protection_index",
+      "title": "Margin Protection Index",
+      "description": "Review margin retention strength across categories and regions to guard against pricing and procurement erosion.",
+      "directory": "finance",
+      "subdirectory": "margins",
+      "route": "/finance/margins/margin-protection-index",
+      "keywords": [
+        "margin protection",
+        "pricing resilience",
+        "profit risk",
+        "margin safeguard",
+        "gross margin guardrail"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_margin_index",
+          "type": "kpi",
+          "title": "Margin Protection Score",
+          "data_view": "v_margin_protection_index_kpi_margin_index",
+          "measures": [
+            "margin_index",
+            "margin_gap_pct"
+          ]
+        },
+        {
+          "id": "chart_margin_index",
+          "type": "line_chart",
+          "title": "Margin Index Over Time",
+          "data_view": "v_margin_protection_index_chart_margin_index",
+          "measures": [
+            "margin_index"
+          ],
+          "columns": [
+            "date"
+          ]
+        },
+        {
+          "id": "grid_margin_table",
+          "type": "grid",
+          "title": "Margin Protection Detail",
+          "data_view": "v_margin_protection_index_grid_margin_table",
+          "columns": [
+            "region",
+            "category",
+            "margin_index",
+            "gross_profit",
+            "loss_risk"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "select",
+          "allowed_values": [
+            "Packaged Foods",
+            "Beverages",
+            "Household",
+            "Personal Care"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_month",
+        "last_month",
+        "this_quarter",
+        "this_year"
+      ],
+      "default_date_range": "this_quarter",
+      "sort_options": [
+        {
+          "field": "margin_index",
+          "label": "Margin Index (Desc)"
+        },
+        {
+          "field": "category",
+          "label": "Category Name"
+        }
+      ],
+      "default_sort": {
+        "field": "margin_index",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "shipping_performance_by_region",
+      "title": "Shipping Performance by Region",
+      "description": "Track order fulfillment reliability and carrier delivery performance to flag service degradation in each region.",
+      "directory": "operations",
+      "subdirectory": "fulfillment",
+      "route": "/operations/fulfillment/shipping-performance-by-region",
+      "keywords": [
+        "shipping performance",
+        "carrier SLA",
+        "delivery reliability",
+        "regional logistics",
+        "shipment punctuality"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_on_time_delivery",
+          "type": "kpi",
+          "title": "On-Time Shipment Rate",
+          "data_view": "v_shipping_performance_by_region_kpi_on_time_delivery",
+          "measures": [
+            "on_time_pct",
+            "delay_pct"
+          ]
+        },
+        {
+          "id": "chart_shipping_by_region",
+          "type": "bar_chart",
+          "title": "Regional Shipping Reliability",
+          "data_view": "v_shipping_performance_by_region_chart_shipping_by_region",
+          "measures": [
+            "on_time_pct"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_shipping_table",
+          "type": "grid",
+          "title": "Shipping Detail",
+          "data_view": "v_shipping_performance_by_region_grid_shipping_table",
+          "columns": [
+            "region",
+            "carrier",
+            "on_time_pct",
+            "avg_delivery_days",
+            "total_shipments"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "last_7_days",
+        "last_30_days",
+        "this_month",
+        "this_quarter"
+      ],
+      "default_date_range": "this_month",
+      "sort_options": [
+        {
+          "field": "on_time_pct",
+          "label": "On-Time % (Desc)"
+        },
+        {
+          "field": "region",
+          "label": "Region Name"
+        }
+      ],
+      "default_sort": {
+        "field": "on_time_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "id": "warehouse_capacity_utilization",
+      "title": "Warehouse Capacity Utilization",
+      "description": "Measure how much facility capacity is being used to spot expansion needs and reduce overflow handling inefficiencies.",
+      "directory": "operations",
+      "subdirectory": "orders",
+      "route": "/operations/orders/warehouse-capacity-utilization",
+      "keywords": [
+        "warehouse utilization",
+        "facility load",
+        "capacity planning",
+        "space usage",
+        "warehouse throughput"
+      ],
+      "widgets": [
+        {
+          "id": "kpi_utilization_pct",
+          "type": "kpi",
+          "title": "Average Capacity Use",
+          "data_view": "v_warehouse_capacity_utilization_kpi_utilization_pct",
+          "measures": [
+            "utilization_pct",
+            "free_space_pct"
+          ]
+        },
+        {
+          "id": "chart_capacity_by_region",
+          "type": "bar_chart",
+          "title": "Capacity Utilization by Region",
+          "data_view": "v_warehouse_capacity_utilization_chart_capacity_by_region",
+          "measures": [
+            "utilization_pct"
+          ],
+          "columns": [
+            "region"
+          ]
+        },
+        {
+          "id": "grid_capacity_table",
+          "type": "grid",
+          "title": "Facility Capacity Detail",
+          "data_view": "v_warehouse_capacity_utilization_grid_capacity_table",
+          "columns": [
+            "region",
+            "warehouse_name",
+            "utilization_pct",
+            "free_space_pct",
+            "peak_volume"
+          ]
+        }
+      ],
+      "filters": [
+        {
+          "name": "region",
+          "type": "multi_select",
+          "allowed_values": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ],
+          "default": [
+            "North",
+            "South",
+            "East",
+            "West"
+          ]
+        },
+        {
+          "name": "channel",
+          "type": "select",
+          "allowed_values": [
+            "Online",
+            "Retail",
+            "Partner"
+          ],
+          "default": null
+        }
+      ],
+      "date_range_options": [
+        "this_week",
+        "last_30_days",
+        "this_month",
+        "this_quarter"
+      ],
+      "default_date_range": "this_month",
+      "sort_options": [
+        {
+          "field": "utilization_pct",
+          "label": "Utilization % (Desc)"
+        },
+        {
+          "field": "region",
+          "label": "Region Name"
+        }
+      ],
+      "default_sort": {
+        "field": "utilization_pct",
+        "order": "desc"
+      },
+      "allowed_roles": [
+        "admin",
+        "regional_manager",
+        "analyst"
+      ],
+      "region_scoped": true,
+      "actions": [
+        {
+          "id": "reset_filters",
+          "label": "Reset filters",
+          "requires_confirmation": false
+        },
+        {
+          "id": "export_csv",
+          "label": "Export CSV",
+          "requires_confirmation": true
+        }
+      ]
+    }
+  ]
+}

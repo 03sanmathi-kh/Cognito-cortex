@@ -1,0 +1,74 @@
+{
+  "sections": [
+    {
+      "id": "dashboard",
+      "title": "Dashboard",
+      "icon": "LayoutDashboard",
+      "items": [
+        { "id": "overview", "title": "Overview", "path": "/", "icon": "LayoutGrid" },
+        { "id": "executive-kpi", "title": "Executive KPIs", "path": "/dashboard/kpi", "icon": "TrendingUp" },
+        { "id": "performance", "title": "Performance", "path": "/dashboard/performance", "icon": "BarChart3" }
+      ]
+    },
+    {
+      "id": "sales",
+      "title": "Sales",
+      "icon": "BadgePercent",
+      "items": [
+        { "id": "regional-orders", "title": "Regional Orders", "path": "/sales/orders", "icon": "ShoppingBag" },
+        { "id": "pipeline-deals", "title": "Pipeline & Deals", "path": "/sales/pipeline", "icon": "Kanban" },
+        { "id": "quotations", "title": "Quotations", "path": "/sales/quotes", "icon": "FileText" }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Finance",
+      "icon": "CircleDollarSign",
+      "items": [
+        { "id": "revenue-margin", "title": "Revenue & Margin", "path": "/finance/revenue", "icon": "DollarSign" },
+        { "id": "invoices", "title": "Invoices", "path": "/finance/invoices", "icon": "Receipt" },
+        { "id": "cost-analysis", "title": "Cost Analysis", "path": "/finance/costs", "icon": "PieChart" }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operations",
+      "icon": "Truck",
+      "items": [
+        { "id": "shipments", "title": "Shipments & Tracking", "path": "/operations/shipments", "icon": "Send" },
+        { "id": "warehouses", "title": "Warehouses", "path": "/operations/warehouses", "icon": "Warehouse" },
+        { "id": "logistics", "title": "Fleet & Logistics", "path": "/operations/logistics", "icon": "Navigation" }
+      ]
+    },
+    {
+      "id": "customers",
+      "title": "Customers",
+      "icon": "Users",
+      "items": [
+        { "id": "directory", "title": "Client Directory", "path": "/customers/directory", "icon": "Contact2" },
+        { "id": "accounts", "title": "Regional Accounts", "path": "/customers/accounts", "icon": "Building2" },
+        { "id": "retention", "title": "Churn & Retention", "path": "/customers/retention", "icon": "UserCheck" }
+      ]
+    },
+    {
+      "id": "inventory",
+      "title": "Inventory",
+      "icon": "Boxes",
+      "items": [
+        { "id": "stock-levels", "title": "Stock Levels", "path": "/inventory/stock", "icon": "Box" },
+        { "id": "reorder-alerts", "title": "Reorder Alerts", "path": "/inventory/reorder", "icon": "AlertTriangle" },
+        { "id": "suppliers", "title": "Suppliers Catalog", "path": "/inventory/suppliers", "icon": "Store" }
+      ]
+    },
+    {
+      "id": "admin",
+      "title": "Admin",
+      "icon": "ShieldCheck",
+      "items": [
+        { "id": "roles", "title": "Roles & Access", "path": "/admin/roles", "icon": "Lock" },
+        { "id": "tenant", "title": "Tenant Settings", "path": "/admin/tenant", "icon": "Settings" },
+        { "id": "integrations", "title": "App Integrations", "path": "/admin/integrations", "icon": "Plug" }
+      ]
+    }
+  ]
+}

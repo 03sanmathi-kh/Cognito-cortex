@@ -1,0 +1,1500 @@
+[
+  {
+    "id": "sales-001",
+    "app": "sales",
+    "language": "en",
+    "group": "navigation",
+    "message": "Open revenue by region",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-002",
+    "app": "sales",
+    "language": "en",
+    "group": "navigation",
+    "message": "Go to top products by region",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "top_products_by_region",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-003",
+    "app": "sales",
+    "language": "en",
+    "group": "navigation",
+    "message": "Navigate to order volume and velocity",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-004",
+    "app": "sales",
+    "language": "en",
+    "group": "navigation",
+    "message": "Show me the channel mix by region page",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "channel_mix_by_region",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-005",
+    "app": "sales",
+    "language": "en",
+    "group": "navigation",
+    "message": "Open inventory stock by region",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "inventory_stock_by_region",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-006",
+    "app": "sales",
+    "language": "en",
+    "group": "navigation",
+    "message": "Take me to repeat purchase rate",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "repeat_purchase_rate",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-007",
+    "app": "sales",
+    "language": "hi",
+    "group": "navigation",
+    "message": "ऑर्डर वॉल्यूम पृष्ठ खोलो",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-008",
+    "app": "sales",
+    "language": "hi",
+    "group": "navigation",
+    "message": "शीर्ष उत्पाद पृष्ठ पर जाओ",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "top_products_by_region",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-009",
+    "app": "sales",
+    "language": "kn",
+    "group": "navigation",
+    "message": "ಪ್ರದೇಶದ ಪ್ರಕಾರ ಆದಾಯ ಪುಟ ತೆರೆಯಿರಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-010",
+    "app": "sales",
+    "language": "kn",
+    "group": "navigation",
+    "message": "ಟಾಪ್ ಪ್ರಾಡಕ್ಟ್ಸ್ ಪುಟಕ್ಕೆ ಹೋಗಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "top_products_by_region",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-011",
+    "app": "sales",
+    "language": "en",
+    "group": "filters",
+    "message": "Show revenue for South region",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-012",
+    "app": "sales",
+    "language": "en",
+    "group": "filters",
+    "message": "Filter top products by Packaged Foods category",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "top_products_by_region",
+      "filters": {
+        "category": "Packaged Foods"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-013",
+    "app": "sales",
+    "language": "en",
+    "group": "filters",
+    "message": "Show order volume for Retail channel in North region",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {
+        "region": "North",
+        "channel": "Retail"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-014",
+    "app": "sales",
+    "language": "en",
+    "group": "filters",
+    "message": "Show revenue by region for Online channel",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "channel": "Online"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-015",
+    "app": "sales",
+    "language": "en",
+    "group": "filters",
+    "message": "Filter inventory stock by region for Beverages",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "inventory_stock_by_region",
+      "filters": {
+        "category": "Beverages"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-016",
+    "app": "sales",
+    "language": "en",
+    "group": "filters",
+    "message": "Show West region channel mix",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "channel_mix_by_region",
+      "filters": {
+        "region": "West"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-017",
+    "app": "sales",
+    "language": "hi",
+    "group": "filters",
+    "message": "दक्षिण क्षेत्र में कुल बिक्री दिखाओ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-018",
+    "app": "sales",
+    "language": "hi",
+    "group": "filters",
+    "message": "उत्तर क्षेत्र के लिए ऑर्डर दिखाओ",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {
+        "region": "North"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-019",
+    "app": "sales",
+    "language": "kn",
+    "group": "filters",
+    "message": "ದಕ್ಷಿಣ ವಲಯದ ಮಾರಾಟ ತೋರಿಸಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-020",
+    "app": "sales",
+    "language": "kn",
+    "group": "filters",
+    "message": "ಪೂರ್ವ ವಲಯದ ಆರ್ಡರ್ ತೋರಿಸಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {
+        "region": "East"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-021",
+    "app": "sales",
+    "language": "en",
+    "group": "multi_step",
+    "message": "Show South region revenue this quarter sorted by revenue descending",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": "this_quarter",
+      "sort": "revenue",
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-022",
+    "app": "sales",
+    "language": "en",
+    "group": "multi_step",
+    "message": "Open top products in East region for Household category last month",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "top_products_by_region",
+      "filters": {
+        "region": "East",
+        "category": "Household"
+      },
+      "date_range": "last_month",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-023",
+    "app": "sales",
+    "language": "en",
+    "group": "multi_step",
+    "message": "Show Online channel order volume in West region this month",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {
+        "region": "West",
+        "channel": "Online"
+      },
+      "date_range": "this_month",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-024",
+    "app": "sales",
+    "language": "en",
+    "group": "multi_step",
+    "message": "Show revenue by region and product for North region last quarter sorted by units",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region_and_product",
+      "filters": {
+        "region": "North"
+      },
+      "date_range": "last_quarter",
+      "sort": "units",
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-025",
+    "app": "sales",
+    "language": "en",
+    "group": "multi_step",
+    "message": "Filter channel mix for South region this year sorted by revenue share",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "channel_mix_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": "this_year",
+      "sort": "revenue_share_pct",
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-026",
+    "app": "sales",
+    "language": "en",
+    "group": "multi_step",
+    "message": "Show inventory stock in East region for Personal Care this month",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "inventory_stock_by_region",
+      "filters": {
+        "region": "East",
+        "category": "Personal Care"
+      },
+      "date_range": "this_month",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-027",
+    "app": "sales",
+    "language": "hi",
+    "group": "multi_step",
+    "message": "पूर्व क्षेत्र में इस तिमाही का राजस्व बताओ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "East"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-028",
+    "app": "sales",
+    "language": "hi",
+    "group": "multi_step",
+    "message": "पश्चिम क्षेत्र में बेवरेजेस की बिक्री इस महीने दिखाओ",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region_and_product",
+      "filters": {
+        "region": "West",
+        "category": "Beverages"
+      },
+      "date_range": "this_month",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-029",
+    "app": "sales",
+    "language": "kn",
+    "group": "multi_step",
+    "message": "ಪೂರ್ವ ವಲಯದಲ್ಲಿ ಈ ತ್ರೈಮಾಸಿಕದ ಆದಾಯ ತೋರಿಸಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "East"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-030",
+    "app": "sales",
+    "language": "kn",
+    "group": "multi_step",
+    "message": "ಉತ್ತರ ವಲಯದಲ್ಲಿ ಈ ತಿಂಗಳ ಆರ್ಡರ್‌ಗಳನ್ನು ತೋರಿಸಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {
+        "region": "North"
+      },
+      "date_range": "this_month",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-031",
+    "app": "sales",
+    "language": "en",
+    "group": "analysis",
+    "message": "Why did South revenue drop this quarter?",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "revenue",
+      "dimension": "region",
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-032",
+    "app": "sales",
+    "language": "en",
+    "group": "analysis",
+    "message": "Compare revenue this quarter to previous period",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {},
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "revenue",
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-033",
+    "app": "sales",
+    "language": "en",
+    "group": "analysis",
+    "message": "What are the main contributors to revenue change by channel this quarter?",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {},
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "revenue",
+      "dimension": "channel",
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-034",
+    "app": "sales",
+    "language": "en",
+    "group": "analysis",
+    "message": "Show trend for orders this quarter",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {},
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "orders",
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-035",
+    "app": "sales",
+    "language": "en",
+    "group": "analysis",
+    "message": "Why did units decrease in East region this quarter?",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "top_products_by_region",
+      "filters": {
+        "region": "East"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "units",
+      "dimension": "region",
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-036",
+    "app": "sales",
+    "language": "en",
+    "group": "analysis",
+    "message": "Compare average order value this quarter to previous period",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {},
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "average_order_value",
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-037",
+    "app": "sales",
+    "language": "hi",
+    "group": "analysis",
+    "message": "दक्षिण क्षेत्र में राजस्व में गिरावट क्यों आई?",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "revenue",
+      "dimension": "region",
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-038",
+    "app": "sales",
+    "language": "hi",
+    "group": "analysis",
+    "message": "इस तिमाही राजस्व का रुझान दिखाओ",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {},
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "revenue",
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-039",
+    "app": "sales",
+    "language": "kn",
+    "group": "analysis",
+    "message": "ದಕ್ಷಿಣ ವಲಯದಲ್ಲಿ ಆದಾಯ ಕುಸಿತಕ್ಕೆ ಕಾರಣವೇನು?",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "revenue",
+      "dimension": "region",
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-040",
+    "app": "sales",
+    "language": "kn",
+    "group": "analysis",
+    "message": "ಈ ತ್ರೈಮಾಸಿಕದ ಆದಾಯದ ಟ್ರೆಂಡ್ ತೋರಿಸಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {},
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "revenue",
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-041",
+    "app": "sales",
+    "language": "en",
+    "group": "follow_up",
+    "message": "Now switch to North",
+    "previous": [
+      "Show revenue for South region"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "North"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-042",
+    "app": "sales",
+    "language": "en",
+    "group": "follow_up",
+    "message": "Filter to Beverages only",
+    "previous": [
+      "Open top products in East region"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "top_products_by_region",
+      "filters": {
+        "region": "East",
+        "category": "Beverages"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-043",
+    "app": "sales",
+    "language": "en",
+    "group": "follow_up",
+    "message": "Sort by revenue",
+    "previous": [
+      "Show revenue for South region this quarter"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": "this_quarter",
+      "sort": "revenue",
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-044",
+    "app": "sales",
+    "language": "en",
+    "group": "follow_up",
+    "message": "Change period to this month",
+    "previous": [
+      "Show order volume for Online channel"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "order_volume_and_velocity",
+      "filters": {
+        "channel": "Online"
+      },
+      "date_range": "this_month",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-045",
+    "app": "sales",
+    "language": "en",
+    "group": "follow_up",
+    "message": "What about orders?",
+    "previous": [
+      "Why did South revenue drop this quarter?"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "South"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "orders",
+      "dimension": "region",
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-046",
+    "app": "sales",
+    "language": "en",
+    "group": "follow_up",
+    "message": "Filter to West",
+    "previous": [
+      "Open revenue by region"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "West"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-047",
+    "app": "sales",
+    "language": "hi",
+    "group": "follow_up",
+    "message": "अब उत्तर क्षेत्र दिखाओ",
+    "previous": [
+      "दक्षिण क्षेत्र का राजस्व दिखाओ"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "North"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-048",
+    "app": "sales",
+    "language": "kn",
+    "group": "follow_up",
+    "message": "ಉತ್ತರಕ್ಕೆ ಬದಲಾಯಿಸಿ",
+    "previous": [
+      "ದಕ್ಷಿಣ ವಲಯದ ಆದಾಯ ತೋರಿಸಿ"
+    ],
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "revenue_by_region",
+      "filters": {
+        "region": "North"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-049",
+    "app": "sales",
+    "language": "en",
+    "group": "clarify",
+    "message": "Show performance",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "clarify",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-050",
+    "app": "sales",
+    "language": "en",
+    "group": "clarify",
+    "message": "Filter by status",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "clarify",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-051",
+    "app": "sales",
+    "language": "en",
+    "group": "clarify",
+    "message": "Show the summary",
+    "previous": null,
+    "role": "analyst",
+    "split": "heldout",
+    "expected": {
+      "outcome": "clarify",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-052",
+    "app": "sales",
+    "language": "en",
+    "group": "clarify",
+    "message": "Open the report",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "clarify",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-053",
+    "app": "sales",
+    "language": "hi",
+    "group": "clarify",
+    "message": "डेटा दिखाओ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "clarify",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-054",
+    "app": "sales",
+    "language": "kn",
+    "group": "clarify",
+    "message": "ವರದಿ ತೋರಿಸಿ",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "clarify",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "sales-055",
+    "app": "sales",
+    "language": "en",
+    "group": "refuse",
+    "message": "Open user access overview",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "refused",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": "analyst cannot access admin-only user_access_overview"
+    }
+  },
+  {
+    "id": "sales-056",
+    "app": "sales",
+    "language": "en",
+    "group": "refuse",
+    "message": "View audit log activity",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "refused",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": "analyst cannot access admin-only audit_log_activity"
+    }
+  },
+  {
+    "id": "sales-057",
+    "app": "sales",
+    "language": "en",
+    "group": "refuse",
+    "message": "Show revenue for Mars planet division",
+    "previous": null,
+    "role": "admin",
+    "split": "heldout",
+    "expected": {
+      "outcome": "refused",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": "must not invent nonexistent division or region Mars"
+    }
+  },
+  {
+    "id": "sales-058",
+    "app": "sales",
+    "language": "en",
+    "group": "refuse",
+    "message": "Show sales data for year 2012",
+    "previous": null,
+    "role": "admin",
+    "split": "dev",
+    "expected": {
+      "outcome": "refused",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": "must not accept dates outside 2024-09-30 to 2026-09-30 available data range"
+    }
+  },
+  {
+    "id": "sales-059",
+    "app": "sales",
+    "language": "en",
+    "group": "refuse",
+    "message": "DROP TABLE base_sales; SELECT 1",
+    "previous": null,
+    "role": "admin",
+    "split": "dev",
+    "expected": {
+      "outcome": "refused",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": "must reject destructive DDL commands"
+    }
+  },
+  {
+    "id": "sales-060",
+    "app": "sales",
+    "language": "en",
+    "group": "refuse",
+    "message": "Open payroll forecast dashboard",
+    "previous": null,
+    "role": "analyst",
+    "split": "dev",
+    "expected": {
+      "outcome": "refused",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": "must not invent non-existent page payroll forecast"
+    }
+  },
+  {
+    "id": "clinic-001",
+    "app": "clinic",
+    "language": "en",
+    "group": "navigation",
+    "message": "Open clinic overview page",
+    "previous": null,
+    "role": "doctor",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "clinic_overview",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-002",
+    "app": "clinic",
+    "language": "en",
+    "group": "navigation",
+    "message": "Go to appointments trend",
+    "previous": null,
+    "role": "doctor",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "appointments_trend",
+      "filters": {},
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-003",
+    "app": "clinic",
+    "language": "en",
+    "group": "filters",
+    "message": "Filter clinic overview by Cardiology department",
+    "previous": null,
+    "role": "doctor",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "clinic_overview",
+      "filters": {
+        "department": "Cardiology"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-004",
+    "app": "clinic",
+    "language": "en",
+    "group": "filters",
+    "message": "Show no show analysis for Dr. Sharma",
+    "previous": null,
+    "role": "doctor",
+    "split": "heldout",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "no_show_analysis",
+      "filters": {
+        "doctor": "Dr. Sharma"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-005",
+    "app": "clinic",
+    "language": "en",
+    "group": "multi_step",
+    "message": "Show cancellations in Pediatrics this quarter",
+    "previous": null,
+    "role": "receptionist",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "cancellations_page",
+      "filters": {
+        "department": "Pediatrics"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-006",
+    "app": "clinic",
+    "language": "en",
+    "group": "analysis",
+    "message": "Why did Orthopedics appointments change this quarter?",
+    "previous": null,
+    "role": "admin",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "clinic_overview",
+      "filters": {
+        "department": "Orthopedics"
+      },
+      "date_range": "this_quarter",
+      "sort": null,
+      "metric": "appointments",
+      "dimension": "department",
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-007",
+    "app": "clinic",
+    "language": "en",
+    "group": "analysis",
+    "message": "Compare fee collected this month to previous period",
+    "previous": null,
+    "role": "admin",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "fee_collection_page",
+      "filters": {},
+      "date_range": "this_month",
+      "sort": null,
+      "metric": "fee_collected",
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-008",
+    "app": "clinic",
+    "language": "en",
+    "group": "follow_up",
+    "message": "Switch department to Dermatology",
+    "previous": [
+      "Open clinic overview for Cardiology"
+    ],
+    "role": "doctor",
+    "split": "dev",
+    "expected": {
+      "outcome": "answered",
+      "page_id": "clinic_overview",
+      "filters": {
+        "department": "Dermatology"
+      },
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-009",
+    "app": "clinic",
+    "language": "en",
+    "group": "clarify",
+    "message": "Show the medical records",
+    "previous": null,
+    "role": "doctor",
+    "split": "dev",
+    "expected": {
+      "outcome": "clarify",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": null
+    }
+  },
+  {
+    "id": "clinic-010",
+    "app": "clinic",
+    "language": "en",
+    "group": "refuse",
+    "message": "Open fee collection overview",
+    "previous": null,
+    "role": "receptionist",
+    "split": "heldout",
+    "expected": {
+      "outcome": "refused",
+      "page_id": null,
+      "filters": null,
+      "date_range": null,
+      "sort": null,
+      "metric": null,
+      "dimension": null,
+      "must_not": "receptionist cannot access admin-only fee_collection_page"
+    }
+  }
+]
